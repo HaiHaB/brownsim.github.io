@@ -121,7 +121,7 @@ class Footer extends HTMLElement {
 								<div class="row">
 									<div class="col-md-6 footer-space">
 										<img class="img-2" src="assets/img/linkedin.svg" alt=""/>
-										<div class="social"><a href="https://www.linkedin.com/in/craigrobertbrown/">in/craigroberbrown</a></div>
+										<div class="social"><a href="https://www.linkedin.com/company/brownsim/">company/brownsim/</a></div>
 									</div>
 									<div class="col-md-6 footer-space">
 										<img class="img-2" src="assets/img/mail.png" alt=""/>
