@@ -130,9 +130,9 @@ class Footer extends HTMLElement {
 								</div>
 							</div>
 							<div class="col-md-6 frame-29">
-								<div class="text-small"><a href="privacyPolicy.html">Privacy Policy</a></div>
+								<div class="text-small"><a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=79c27c29-6203-4535-93f6-12fae24f3347">Privacy Policy</a></div>
 								<img class="line" src="assets/img/vert-line.svg" alt=""/>
-								<div class="text-small"><a href="cookiePolicy.html">Cookie Policy</a></div>
+								<div class="text-small"><a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=33799b21-62d2-4d4c-94d8-2627fb48e5e3">Cookie Policy</a></div>
 							</div>
 						</div>
 						<p class="text-small">
