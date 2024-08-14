@@ -121,7 +121,7 @@ class Footer extends HTMLElement {
 								<div class="row">
 									<div class="col-md-6 footer-space">
 										<img class="img-2" src="assets/img/linkedin.svg" alt=""/>
-										<div class="social">in/craigroberbrown</div>
+										<div class="social"><a href="https://www.linkedin.com/in/craigrobertbrown/">in/craigroberbrown</a></div>
 									</div>
 									<div class="col-md-6 footer-space">
 										<img class="img-2" src="assets/img/mail.png" alt=""/>
@@ -136,8 +136,7 @@ class Footer extends HTMLElement {
 							</div>
 						</div>
 						<p class="text-small">
-							BrownSim Ltd, Company number 14540342, Lytchett House, Freeland Park, Unit 13 Wareham Road,
-							Lytchett Matravers, Poole, Dorset, United Kingdom, BH16 6FA
+							BrownSim Ltd, Company number 14540342, Suite 126 Westlink House, 981 Great West Road, London, United Kingdom, TW8 9DN
 						</p>
 					</div>
 
