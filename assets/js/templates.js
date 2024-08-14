@@ -130,9 +130,9 @@ class Footer extends HTMLElement {
 								</div>
 							</div>
 							<div class="col-md-6 frame-29">
-								<div class="text-small">Privacy Policy</div>
+								<div class="text-small"><a href="privacyPolicy.html">Privacy Policy</a></div>
 								<img class="line" src="assets/img/vert-line.svg" alt=""/>
-								<div class="text-small">Cookie Policy</div>
+								<div class="text-small"><a href="cookiePolicy.html">Cookie Policy</a></div>
 							</div>
 						</div>
 						<p class="text-small">
