@@ -1,3 +1,105 @@
+class Header extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+      <style>
+			// @media (min-width: 1200px) {
+				.container-center {
+					max-width: 1200px;
+				}
+			// }
+
+			// @media (min-width: 950px) {
+				.menu-container {
+					gap: 64px;
+					flex-direction: row;
+				}
+			// }
+
+			.logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-width: 200px;
+				width: 100%;
+			}
+
+			.menu {
+				display: inline-flex;
+				justify-content: flex-start;
+				flex: 1;
+			}
+
+			.menu-item {
+				display: inline-flex;
+				height: 60px;
+				padding: 8px 24px;
+				flex: 0 0 auto;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+			}
+
+			.menu-link {
+				position: relative;
+				width: fit-content;
+				text-align: center;
+				white-space: nowrap;
+				color: #bdb7bd;
+				font-family: var(--paragraph-medium-bold-font-family), serif;
+				font-weight: var(--paragraph-medium-bold-font-weight);
+				font-size: var(--paragraph-medium-bold-font-size);
+				letter-spacing: var(--paragraph-medium-bold-letter-spacing);
+				line-height: var(--paragraph-medium-bold-line-height);
+				font-style: var(--paragraph-medium-bold-font-style);
+				text-decoration: none;
+			}
+			.menu-item.active {
+			border-bottom: 2px solid #ffd053;
+			padding-bottom: 6px;
+			}
+
+			.menu-item.active .menu-link {
+			color: #ffd053;
+			}
+    </style>
+
+
+	<div class="menu-bar">
+		<div class="container-center">
+			<div class="menu-container">
+				<a class="logo" href="home.html" title="BrownSim logo">
+					<img src="assets/img/logo.svg" alt="BrownSim logo"/>
+				</a>
+				<div class="menu">
+					<div class="menu-item">
+						<a href="procue.html" class="menu-link">ProCue</a>
+					</div>
+					<div class="menu-item">
+						<a href="leadership.html" class="menu-link">Leadership &amp; Philosophy</a>
+					</div>
+					<div class="menu-item">
+						<a href="services.html" class="menu-link">Capabilities &amp; Services</a>
+					</div>
+					<div class="menu-item active">
+						<a href="careers.html" class="menu-link">Careers</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    `;
+  }
+}
+
+customElements.define('header-component', Header);
+
+
+
 class Footer extends HTMLElement {
   constructor() {
     super();
@@ -19,8 +121,10 @@ class Footer extends HTMLElement {
 		padding: 48px 0;
 		}
 
-		.container-center {
-			max-width: 1200px;
+		@media (min-width: 1200px) {
+			.container-center {
+				max-width: 1200px;
+			}
 		}
 
 		.home .frame-27 {
@@ -142,26 +246,3 @@ class Footer extends HTMLElement {
 }
 
 customElements.define('footer-component', Footer);
-
-
-class Careers extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.innerHTML = `
-				<p><b>Top 3 reasons to join us?</b></p>
-					<li>Exceptional professional growth opportunities in a tech-focused company, allowing you to enhance your skills at an accelerated pace.</li>
-					<li>Flat structure, simple processes & transparency</li>
-					<li>Fully remote working experience</li>
-
-				</ul>
-
-				<p>If you wish to discuss this role further, then please send us an email at <a href= "mailto: craig.brown@brownsim.io"> craig.brown@brownsim.io</a></p>
-				</div>
-    `;
-  }
-}
-
-customElements.define('careers-component', Careers);
