@@ -229,7 +229,7 @@ class Header extends HTMLElement {
 	<div class="menu-bar">
 		<div class="container-center">
 			<div class="menu-container">
-				<a class="logo" href="home.html" title="BrownSim logo">
+				<a class="logo" href="index.html" title="BrownSim logo">
 					<img src="assets/img/logo.svg" alt="BrownSim logo"/>
 				</a>
 				<div class="menu">
