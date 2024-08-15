@@ -45,7 +45,7 @@ const Head = {
     controls: null,
 
     init: function () {
-        (new FBXLoader()).load('./assets/3D/humanhead.fbx', (fbx) => {
+        (new FBXLoader()).load('./assets/3d/humanhead.fbx', (fbx) => {
             this.ready(fbx);
         });
     },
