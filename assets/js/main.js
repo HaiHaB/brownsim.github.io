@@ -30,19 +30,19 @@
         expiresIn: 30,
 
         // Dismiss button background color
-        buttonBgColor: '#d35400',
+        buttonBgColor: '#ffd053',
 
         // Dismiss button text color
-        buttonTextColor: '#fff',
+        buttonTextColor: '#49424a',
 
         // Notice background color
-        noticeBgColor: '#000',
+        noticeBgColor: '#2a1609',
 
         // Notice text color
-        noticeTextColor: '#fff',
+        noticeTextColor: '#f1cfb9',
 
         // the lernMoreLink color (default='#009fdd')
-        linkColor:'#f00'
+        linkColor:'#ffffff'
 
      });
 
