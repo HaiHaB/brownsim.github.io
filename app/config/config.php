@@ -36,8 +36,7 @@ $app->path(__DIR__ . $ds . '..' . $ds . '..');
 $app->set('flight.base_url', '/'); // if this is in a subdirectory, you'll need to change this
 $app->set('flight.case_sensitive', false); // if you want case-sensitive routes, set this to true
 $app->set('flight.log_errors', true); // if you want to log errors, set this to true
-$app->set('flight.handle_errors',
-    false); // if you want flight to handle errors, set this to true, otherwise Tracy will handle them
+$app->set('flight.handle_errors', false); // if you want flight to handle errors, set this to true, otherwise Tracy will handle them
 $app->set('flight.views.path', __DIR__ . $ds . '..' . $ds . 'views'); // set the path to your view/template/ui files
 $app->set('flight.views.extension', '.php'); // set the file extension for your view/template/ui files
 $app->set('flight.content_length', true); // if flight should send a content length header
@@ -50,8 +49,8 @@ $app->set('flight.content_length', true); // if flight should send a content len
  * Check out the docs here:
  * https://tracy.nette.org/
  */
-Debugger::enable(); // auto tries to figure out your environment
-// Debugger::enable(Debugger::DEVELOPMENT) // sometimes you have to be explicit (also Debugger::PRODUCTION)
+// Debugger::enable(); // auto tries to figure out your environment
+Debugger::enable(Debugger::DEVELOPMENT); // sometimes you have to be explicit (also Debugger::PRODUCTION)
 // Debugger::enable('23.75.345.200'); // you can also provide an array of IP addresses
 Debugger::$logDirectory = __DIR__ . $ds . '..' . $ds . 'log';
 Debugger::$strictMode = true; // display all errors
