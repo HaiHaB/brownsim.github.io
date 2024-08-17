@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'app\\' => array($baseDir . '/app'),
+    'flight\\' => array($vendorDir . '/flightphp/runway/src'),
+    'Ahc\\Cli\\' => array($vendorDir . '/adhocore/cli/src'),
 );
