@@ -1,13 +1,10 @@
 <?php
 
-use flight\debug\tracy\TracyExtensionLoader;
-use Tracy\Debugger;
-
 // Set the default timezone
 date_default_timezone_set('America/New_York');
 
 // Set the error reporting level
-error_reporting(E_ALL);
+error_reporting(E_ERROR);
 
 // Set the default character encoding
 if (function_exists('mb_internal_encoding') === true) {
@@ -41,25 +38,6 @@ $app->set('flight.views.path', __DIR__ . $ds . '..' . $ds . 'views'); // set the
 $app->set('flight.views.extension', '.php'); // set the file extension for your view/template/ui files
 $app->set('flight.content_length', true); // if flight should send a content length header
 
-/* 
- * Get Tracy up and running
- * 
- * There lots of setup options for Tracy! Logs, emails, clicking to
- * open in your editor and a lot more!
- * Check out the docs here:
- * https://tracy.nette.org/
- */
-// Debugger::enable(); // auto tries to figure out your environment
-Debugger::enable(Debugger::DEVELOPMENT); // sometimes you have to be explicit (also Debugger::PRODUCTION)
-// Debugger::enable('23.75.345.200'); // you can also provide an array of IP addresses
-Debugger::$logDirectory = __DIR__ . $ds . '..' . $ds . 'log';
-Debugger::$strictMode = true; // display all errors
-// Debugger::$strictMode = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED; // all errors except deprecated notices
-if (Debugger::$showBar && php_sapi_name() !== 'cli') {
-    $app->set('flight.content_length',
-        false); // if Debugger bar is visible, then content-length can not be set by Flight
-    (new TracyExtensionLoader($app));
-}
 
 /* 
  * This is where you will store database credentials, api credentials

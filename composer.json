@@ -23,9 +23,7 @@
   "require": {
     "php": "^7.4 || ^8.0",
     "ext-json": "*",
-    "flightphp/core": "^3.0",
-    "flightphp/runway": "^0.2",
-    "tracy/tracy": "^2.9"
+    "flightphp/core": "^3.0"
   },
   "autoload": {
     "psr-4": {
