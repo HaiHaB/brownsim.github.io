@@ -44,7 +44,13 @@
         // the lernMoreLink color (default='#009fdd')
         linkColor:'#ffffff'
 
-     });
+    });
+
+    const note = document.querySelector("#cookieNotice");
+    if (note) {
+        note.style.fontFamily = '';
+        note.style.lineHeight = '';
+    }
 
 })();
 
