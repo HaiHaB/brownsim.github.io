@@ -1,0 +1,1 @@
+Sitemap: https://staging.halydev.tech/sitemap.xml
