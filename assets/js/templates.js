@@ -120,18 +120,18 @@ class Footer extends HTMLElement {
 								<div class="text-small-bold">Keep in touch</div>
 								<div class="row">
 									<div class="col-md-6 footer-space">
-										<img class="img-2" src="assets/img/linkedin.svg" alt=""/>
+										<img class="img-2" src="assets/img/linkedin.svg" alt="linkedin icon"/>
 										<div class="social"><a href="https://www.linkedin.com/company/brownsim/">company/brownsim/</a></div>
 									</div>
 									<div class="col-md-6 footer-space">
-										<img class="img-2" src="assets/img/mail.png" alt=""/>
+										<img class="img-2" src="assets/img/mail.png" alt="email icon"/>
 										<a href="mailto:craig.brown@brownsim.io" class="social">craig.brown@brownsim.io</a>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6 frame-29">
 								<div class="text-small"><a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=79c27c29-6203-4535-93f6-12fae24f3347">Privacy Policy</a></div>
-								<img class="line" src="assets/img/vert-line.svg" alt=""/>
+								<img class="line" src="assets/img/vertical-line.svg" alt="vertical line"/>
 								<div class="text-small"><a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=33799b21-62d2-4d4c-94d8-2627fb48e5e3">Cookie Policy</a></div>
 							</div>
 						</div>
@@ -381,7 +381,7 @@ class RequestTrial extends HTMLElement {
 
 
 	<div class="col-md-6 frame-16">
-		<img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg" alt=""/>
+		<img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo"/>
 		<p class="text-wrapper">Hackable motion cueing for the 21st Century</p>
 		<div class="frame-3">
 			<div class="frame-4">
