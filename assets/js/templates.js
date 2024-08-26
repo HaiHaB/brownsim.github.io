@@ -151,7 +151,140 @@ class Footer extends HTMLElement {
 customElements.define('footer-component', Footer);
 
 
+class MobileHeader extends HTMLElement {
+  constructor() {
+    super();
+	console.log(this.innerHTML)
 
+	console.log("=======================================")
+
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+      <style>
+		.mobile-logo {
+		position: relative;
+		height: 30px;
+		}
+
+		/* ======== Menu hamburger =========*/
+		.nav-container .hamburger-lines {
+		height: 18px;
+		width: 24px;
+		margin-top: 6px;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		cursor: pointer;
+		}
+
+		.nav-container .hamburger-lines .line {
+		display: block;
+		height: 2px;
+		width: 100%;
+		background: #ffd053;
+		}
+
+		.nav-container .hamburger-lines .line1 {
+		transform-origin: 0% 0%;
+		transition: transform 0.4s ease-in-out;
+		}
+
+		.nav-container .hamburger-lines .line2 {
+		transition: transform 0.2s ease-in-out;
+		}
+
+		.nav-container .hamburger-lines .line3 {
+		transform-origin: 0% 100%;
+		transition: transform 0.4s ease-in-out;
+		}
+
+		.nav-container.active .hamburger-lines .line1 {
+		transform: rotate(45deg);
+		}
+
+		.nav-container.active .hamburger-lines .line2 {
+		transform: scaleY(0);
+		}
+
+		.nav-container.active .hamburger-lines .line3 {
+		transform: rotate(-45deg);
+		}
+
+
+		.menu-dropdown-content {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		left: 0;
+		top: 49px;
+		width: 100%;
+		visibility: hidden;
+		overflow: hidden;
+		}
+
+		.menu-dropdown-content li {
+		background: #2f3238;
+		position: relative;
+		left: 100%;
+		transition: 0.5s;
+		transition-delay: calc(60ms * var(--menu-delay));
+		z-index: 99;
+		}
+
+		.menu-dropdown-content.menu-open li {
+		left: 0;
+		}
+
+		.menu-dropdown-content.menu-open {
+		visibility: visible;
+		}
+
+		.menu-arrow.arrow-rotate {
+		transform: rotate(180deg);
+		}
+
+		.menu-dropdown-content li:hover {
+		background: #1d1f24;
+		}
+
+    </style>
+
+
+	<div class="container-fluid mobile-menu">
+    <div class="row justify-content-between">
+        <div class="col-8">
+            <img class="mobile-logo" src="assets/img/logo.svg" alt="BrownSim logo"/>
+        </div>
+
+        <div class="col-auto nav-container">
+            <span class="hamburger-lines menu-dropdown-btn"
+                  aria-label="menu button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </span>
+        </div>
+    </div>
+
+    <ul class="menu-dropdown-content">
+        <li style="--menu-delay: 1;"><a href="procue.html">ProCue</a></li>
+        <li style="--menu-delay: 2;"><a href="leadership.html">Leadership &amp; Philosophy</a></li>
+        <li style="--menu-delay: 3;"><a href="services.html">Capabilities &amp; Services</a></li>
+        <li style="--menu-delay: 4;"><a href="careers.html">Careers</a></li>
+    </ul>
+</div>
+    `;
+  }
+}
+
+customElements.define('mobile-header-component', MobileHeader);
 
 
 /// Note: The following parts do not work yet!
