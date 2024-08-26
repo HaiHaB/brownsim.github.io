@@ -1,1 +1,1 @@
-Sitemap: https://staging.halydev.tech/sitemap.xml
+Sitemap: https://brownsim.io/sitemap.xml
