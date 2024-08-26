@@ -155,35 +155,20 @@ customElements.define('footer-component', Footer);
 
 
 /// Note: The following parts do not work yet!
+
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_active_element
 class Header extends HTMLElement {
   constructor() {
     super();
+	console.log(this.innerHTML)
+
+	console.log("=======================================")
+
   }
 
   connectedCallback() {
     this.innerHTML = `
       <style>
-			// @media (min-width: 1200px) {
-				.container-center {
-					max-width: 1200px;
-				}
-			// }
-
-			// @media (min-width: 950px) {
-				.menu-container {
-					gap: 64px;
-					flex-direction: row;
-				}
-			// }
-
-			.logo {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				min-width: 200px;
-				width: 100%;
-			}
-
 			.menu {
 				display: inline-flex;
 				justify-content: flex-start;
@@ -226,29 +211,33 @@ class Header extends HTMLElement {
     </style>
 
 
-	<div class="menu-bar">
-		<div class="container-center">
-			<div class="menu-container">
-				<a class="logo" href="index.html" title="BrownSim logo">
-					<img src="assets/img/logo.svg" alt="BrownSim logo"/>
-				</a>
-				<div class="menu">
-					<div class="menu-item">
-						<a href="procue.html" class="menu-link">ProCue</a>
-					</div>
-					<div class="menu-item">
-						<a href="leadership.html" class="menu-link">Leadership &amp; Philosophy</a>
-					</div>
-					<div class="menu-item">
-						<a href="services.html" class="menu-link">Capabilities &amp; Services</a>
-					</div>
-					<div class="menu-item active">
-						<a href="careers.html" class="menu-link">Careers</a>
-					</div>
-				</div>
-			</div>
+	<div class="menu" id="myMenu">
+		<div class="menu-item">
+			<a href="procue.html" class="menu-link">ProCue</a>
+		</div>
+		<div class="menu-item">
+			<a href="leadership.html" class="menu-link">Leadership &amp; Philosophy</a>
+		</div>
+		<div class="menu-item">
+			<a href="services.html" class="menu-link">Capabilities &amp; Services</a>
+		</div>
+		<div class="menu-item">
+			<a href="careers.html" class="menu-link">Careers</a>
 		</div>
 	</div>
+
+	<script>
+		// Add active class to the current button (highlight it)
+		var header = document.getElementById("myMenu");
+		var items = header.getElementsByClassName("menu-item");
+		for (var i = 0; i < items.length; i++) {
+			items[i].addEventListener("click", function() {
+				var current = document.getElementsByClassName("active");
+				current[0].className = current[0].className.replace(" active", "");
+				this.className += " active";
+			});
+		}
+	</script>
     `;
   }
 }
