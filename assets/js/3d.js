@@ -65,6 +65,7 @@ const Head = {
         this.controls = new OrbitControls(this.camera, Renderer.renderer.domElement);
         this.controls.autoRotate = true; // set the autoRotate property to true
         this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
+        this.controls.enableZoom = false; // to disable zoom
 
         //@Todo Add axis helper, but better to remove it
         const axesHelper = new THREE.AxesHelper(50);
