@@ -4,14 +4,36 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ProCue - BrownSim</title>
-    <meta name="description" content="ProCue is a software tool for elite motion simulator teams, and is compatible with any simulator. Whether in aerospace, automotive or motorsport, ProCue will streamline your cueing tuning and development process. Moreover, its state-of-the-art solver and included advanced motion cueing algorithms will put you ahead of the competition.">
-	<meta name="keywords" content="ProCue, Motion, Simulatio,n, Cueing, Automotive, tuning, optimisation">
+    <meta name="description"
+          content="ProCue is a software tool for elite motion simulator teams, and is compatible with any simulator. Whether in aerospace, automotive or motorsport, ProCue will streamline your cueing tuning and development process. Moreover, its state-of-the-art solver and included advanced motion cueing algorithms will put you ahead of the competition.">
+    <meta name="keywords" content="ProCue, Motion, Simulatio,n, Cueing, Automotive, tuning, optimisation">
     <link rel="icon" href="assets/img/favicon.svg" sizes="any" type="image/svg+xml"/>
+
+    <link rel="preload" as="script" href="assets/js/templates.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/build/three.module.min.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/examples/jsm/loaders/FBXLoader.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/examples/jsm/loaders/FontLoader.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/examples/jsm/libs/fflate.module.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/examples/jsm/curves/NURBSUtils.js" />
+    <link rel="preload" as="script" href="https://unpkg.com/three/examples/jsm/controls/OrbitControls.js" />
+    <link rel="preload" as="image" href="assets/img/3d-low-poly.webp" />
+
+    <script async src="https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three/build/three.module.min.js",
+                "three/addons/": "https://unpkg.com/three/examples/jsm/"
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="assets/css/globals.css"/>
     <link rel="stylesheet" href="assets/css/styleguide.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
-	<script type="module" src="assets/js/templates.js"></script>
+    <script type="text/javascript" src="assets/js/templates.js"></script>
 </head>
 <body>
 
@@ -55,20 +77,23 @@
                                 </div>
 
                                 <div class="col-md-6 frame-16">
-                                    <img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo"/>
+                                    <img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg"
+                                         alt="ProCue Logo"/>
                                     <p class="text-wrapper">Hackable motion cueing for the 21st Century</p>
                                     <div class="frame-3">
                                         <div class="frame-4">
                                             <div class="text-wrapper-2">Version 1.0.0</div>
                                             <!-- <a href="#" class="text-wrapper-3">Release notes</a> -->
                                         </div>
-                                        <a href="https://forms.gle/MtPzW9CbCihbRNBs7" button class="btn btn-full"><span class="btn-inner">Request Trial</span></button></a>
+                                        <a href="https://forms.gle/MtPzW9CbCihbRNBs7" button class="btn btn-full"><span
+                                                class="btn-inner">Request Trial</span></button></a>
                                         <p class="text-robo">By downloading, you agree to the <a
-										href="https://www.termsfeed.com/live/e58a8d72-8d54-4363-8606-6d944a2aa70f">Procue EULA</a>.</p>
+                                                href="https://www.termsfeed.com/live/e58a8d72-8d54-4363-8606-6d944a2aa70f">Procue
+                                            EULA</a>.</p>
                                     </div>
                                 </div>
 
-								<!-- <requestTrial-component></requestTrial-component> -->
+                                <!-- <requestTrial-component></requestTrial-component> -->
                             </div>
                         </div>
                     </div>
@@ -86,49 +111,57 @@
                 <div class="container-center container-padding">
                     <div class="d-flex justify-content-center">
                         <div class="frame-10">
-                            <img class="vertical-logo" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo" />
+                            <img class="vertical-logo" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo"/>
                             <div class="text-h1">Everything you would expect</div>
                         </div>
                     </div>
 
                     <div class="row everything gap48">
                         <div class="col-md-4 rectangle-2">
-                            <img class="image-shadow" src="assets/img/engineering-consultant.webp" alt="Engineering consultant reflects on the challenges ahead." />
+                            <img class="image-shadow" src="assets/img/engineering-consultant.webp"
+                                 alt="Engineering consultant reflects on the challenges ahead."/>
                         </div>
                         <div class="col-auto f-flex">
                             <div class="row">
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/global-optimal.svg" alt="Global Optimal icon" />
+                                    <img class="img-2" src="assets/img/global-optimal.svg" alt="Global Optimal icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Globally Optimal</div>
-                                        <p>Demolish even the trickiest motion cueing optimisation problems with our derivative-free, local optima resistant solver.</p>
+                                        <p>Demolish even the trickiest motion cueing optimisation problems with our
+                                            derivative-free, local optima resistant solver.</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/maximal-computing.svg" alt="Maximal computing icon" />
+                                    <img class="img-2" src="assets/img/maximal-computing.svg"
+                                         alt="Maximal computing icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Maximal Compute</div>
-                                        <p>Whether a manual parameter sweep or a large scale optimisation, ProCue will make full use of all your CPU cores.</p>
+                                        <p>Whether a manual parameter sweep or a large scale optimisation, ProCue will
+                                            make full use of all your CPU cores.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/illuminating-feedback.svg" alt="illuminating feedback icon" />
+                                    <img class="img-2" src="assets/img/illuminating-feedback.svg"
+                                         alt="illuminating feedback icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Illuminating Feedback</div>
                                         <p>
-                                            Plot and compare an arbitrary number of motion cueing algorithms together. Compare platform
+                                            Plot and compare an arbitrary number of motion cueing algorithms together.
+                                            Compare platform
                                             accelerations to those perceived by the driver.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/arbitrary-workspace.svg" alt="An arbitrary workspace icon" />
+                                    <img class="img-2" src="assets/img/arbitrary-workspace.svg"
+                                         alt="An arbitrary workspace icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Arbitrary Workspace</div>
                                         <p>
-                                            Thanks to the power of our solver, workspaces can be of arbitrary shape. Incorporate multiple,
+                                            Thanks to the power of our solver, workspaces can be of arbitrary shape.
+                                            Incorporate multiple,
                                             layered speed, acceleration and jerk limits as a function of position.
                                         </p>
                                     </div>
@@ -136,22 +169,27 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 frame-14">
-                                    <img class="alternative-MCA-s" src="assets/img/alternative-mca.svg" alt="Alternative Motion Cueing Algorithm icon" />
+                                    <img class="alternative-MCA-s" src="assets/img/alternative-mca.svg"
+                                         alt="Alternative Motion Cueing Algorithm icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Alternative MCA&#39;s</div>
                                         <p>
-                                            Deploy ProCue&#39;s alternative MCA&#39;s to your simulator, shipped as compilable Simulink
+                                            Deploy ProCue&#39;s alternative MCA&#39;s to your simulator, shipped as
+                                            compilable Simulink
                                             models.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/experiment-management.svg" alt="Experiment Management icon" />
+                                    <img class="img-2" src="assets/img/experiment-management.svg"
+                                         alt="Experiment Management icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Experiment Management</div>
                                         <p>
-                                            Manage the many permutations of scenario(s), MCA(&#39;s) and driver(s). Detect accidental changes
-                                            with in-built &#34;Git-like&#34; traceability. Plain text JSON storage for ease of version
+                                            Manage the many permutations of scenario(s), MCA(&#39;s) and driver(s).
+                                            Detect accidental changes
+                                            with in-built &#34;Git-like&#34; traceability. Plain text JSON storage for
+                                            ease of version
                                             control.
                                         </p>
                                     </div>
@@ -170,41 +208,45 @@
 
                     <div class="row">
                         <div class="col-md-3 frame-17">
-                            <img class="img-2" src="assets/img/mca-s.svg" alt="Motion Cueing Algorithm icon" />
+                            <img class="img-2" src="assets/img/mca-s.svg" alt="Motion Cueing Algorithm icon"/>
                             <div class="frame-15">
                                 <div class="text-headline">MCA&#39;s</div>
                                 <p>
-                                    Incorporate and share your own motion cueing algorithms. Simple compilation process from Simulink
+                                    Incorporate and share your own motion cueing algorithms. Simple compilation process
+                                    from Simulink
                                     leading to completely stand-alone MCA at run-time.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3 frame-17">
-                            <img class="img-2" src="assets/img/driver.svg" alt="helmet icon" />
+                            <img class="img-2" src="assets/img/driver.svg" alt="helmet icon"/>
                             <div class="frame-15">
                                 <div class="text-headline">Drivers</div>
                                 <p>
-                                    Incorporate and share your own perception models. Simple compilation process from Simulink leading to
+                                    Incorporate and share your own perception models. Simple compilation process from
+                                    Simulink leading to
                                     completely stand-alone perception model at run-time.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3 frame-17">
-                            <img class="img-2" src="assets/img/workspace.svg" alt="workspace icon" />
+                            <img class="img-2" src="assets/img/workspace.svg" alt="workspace icon"/>
                             <div class="frame-15">
                                 <div class="text-headline">Workspaces</div>
                                 <p>
-                                    Write arbitrary workspaces as a simple Python module. Carry out simulator studies before a simulator
+                                    Write arbitrary workspaces as a simple Python module. Carry out simulator studies
+                                    before a simulator
                                     is even purchased/built.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3 frame-17">
-                            <img class="img-2" src="assets/img/optimizer.svg" alt="optimizer icon" />
+                            <img class="img-2" src="assets/img/optimizer.svg" alt="optimizer icon"/>
                             <div class="frame-15">
                                 <div class="text-headline">Optimise Your Optimiser</div>
                                 <p>
-                                    Customise your optimisation. Separate constants from tunable variables. Link axes for symmetrical
+                                    Customise your optimisation. Separate constants from tunable variables. Link axes
+                                    for symmetrical
                                     cueing and save computing time. Or leave everything up to the optimiser!
                                 </p>
                             </div>
@@ -221,25 +263,30 @@
 
                     <div class="row gap48">
                         <div class="col-md-4 rectangle-3">
-                            <img class="image-shadow" src="assets/img/motion-simulator.webp" alt="A big motion simulator in action" />
+                            <img class="image-shadow" src="assets/img/motion-simulator.webp"
+                                 alt="A big motion simulator in action"/>
                         </div>
                         <div class="col-auto f-flex">
                             <div class="row">
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/minimize-time-wasted.svg" alt="Decrease Arrow Symbol" />
+                                    <img class="img-2" src="assets/img/minimize-time-wasted.svg"
+                                         alt="Decrease Arrow Symbol"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Minimise Time Wasted</div>
                                         <p>
-                                            Minimise time wasted on tuning cueing systems and safety stops due to bad tuning.
+                                            Minimise time wasted on tuning cueing systems and safety stops due to bad
+                                            tuning.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/maximize-productivity.svg" alt="Increase Arrow Symbol" />
+                                    <img class="img-2" src="assets/img/maximize-productivity.svg"
+                                         alt="Increase Arrow Symbol"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Maximise Productivity</div>
                                         <p>
-                                            Maximise productivity with a state-of-the-art, multithreaded optimiser. Perform massive parameter
+                                            Maximise productivity with a state-of-the-art, multithreaded optimiser.
+                                            Perform massive parameter
                                             sweeps split across many cores.
                                         </p>
                                     </div>
@@ -247,21 +294,25 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 frame-14">
-                                    <img class="img-2" src="assets/img/maximize-cueing-quality.svg" alt="speedometer icon" />
+                                    <img class="img-2" src="assets/img/maximize-cueing-quality.svg"
+                                         alt="speedometer icon"/>
                                     <div class="frame-15">
                                         <div class="text-headline">Maximise cueing quality</div>
                                         <p>
-                                            Maximise productivity with a state-of-the-art, multithreaded optimiser. Perform massive parameter
+                                            Maximise productivity with a state-of-the-art, multithreaded optimiser.
+                                            Perform massive parameter
                                             sweeps split across many cores.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 frame-14">
                                     <div class="frame-15">
-                                        <img class="img-2" src="assets/img/experiment-with-alternative-mca.svg" alt="experiment management icon" />
+                                        <img class="img-2" src="assets/img/experiment-with-alternative-mca.svg"
+                                             alt="experiment management icon"/>
                                         <div class="text-headline">Experiment With Alternative MCA</div>
                                         <p>
-                                            Maximise productivity with a state-of-the-art, multithreaded optimiser. Perform massive parameter
+                                            Maximise productivity with a state-of-the-art, multithreaded optimiser.
+                                            Perform massive parameter
                                             sweeps split across many cores.
                                         </p>
                                     </div>
@@ -282,12 +333,31 @@
                     <div class="row">
                         <div class="col frame-10">
                             <!-- <p class="we-read-and">We read (and occasionally write) the academic papers, so you don&#39;t have to.</p> -->
-							<ol>
-								<li><p class="frame-21"><a href="https://www.researchgate.net/publication/374419150_A_Nonlinear_Extension_to_Classical_Filters_for_Washout_Miscue_Prevention/">Brown, C., 2023. A Nonlinear Extension to Classical Filters for Washout Miscue Prevention. In: A. Kemeny, J.-R. Chardonnet, and F. Colombeteds. Product Solutions Book of the Driving Simulation Confer-ence 2023 Europe VR. Driving Simulation Association. Antibes,France.</a></p></li><br>
-								<li><p class="frame-21"><a href="https://www.researchgate.net/publication/374419150_A_Nonlinear_Extension_to_Classical_Filters_for_Washout_Miscue_Prevention/">Brown, C., 2020. Motion Cueing Washout Tuning based on StepResponses. In: A. Kemeny, J.-R. Chardonnet, and F. Colombeteds. Product Solutions Book of the Driving Simulation Confer-ence 2020 Europe VR. Driving Simulation Association. Antibes,France </a></p></li><br>
-								<li><p class="frame-21"><a href="https://doi.org/10.1007/s00500-015-1746-x">Brown, C., Jin, Y., Leach, M. et al. μJADE: adaptive differential evolution with a small opulation. Soft Comput 20, 4111–4120 (2016)</a></p></li><br>
-								<li><p class="frame-21"><a href="https://openresearch.surrey.ac.uk/esploro/outputs/doctoral/Towards-generic-optimal-domestic-heating-control/99511152402346">Brown, C., Jin, Y., Leach, M. et al.Towards Generic-Optimal Domestic Heating Control (2016)</a></p></li><br>
-							</ol>
+                            <ol>
+                                <li><p class="frame-21"><a
+                                        href="https://www.researchgate.net/publication/374419150_A_Nonlinear_Extension_to_Classical_Filters_for_Washout_Miscue_Prevention/">Brown,
+                                    C., 2023. A Nonlinear Extension to Classical Filters for Washout Miscue Prevention.
+                                    In: A. Kemeny, J.-R. Chardonnet, and F. Colombeteds. Product Solutions Book of the
+                                    Driving Simulation Confer-ence 2023 Europe VR. Driving Simulation Association.
+                                    Antibes,France.</a></p></li>
+                                <br>
+                                <li><p class="frame-21"><a
+                                        href="https://www.researchgate.net/publication/374419150_A_Nonlinear_Extension_to_Classical_Filters_for_Washout_Miscue_Prevention/">Brown,
+                                    C., 2020. Motion Cueing Washout Tuning based on StepResponses. In: A. Kemeny, J.-R.
+                                    Chardonnet, and F. Colombeteds. Product Solutions Book of the Driving Simulation
+                                    Confer-ence 2020 Europe VR. Driving Simulation Association. Antibes,France </a></p>
+                                </li>
+                                <br>
+                                <li><p class="frame-21"><a href="https://doi.org/10.1007/s00500-015-1746-x">Brown, C.,
+                                    Jin, Y., Leach, M. et al. μJADE: adaptive differential evolution with a small
+                                    opulation. Soft Comput 20, 4111–4120 (2016)</a></p></li>
+                                <br>
+                                <li><p class="frame-21"><a
+                                        href="https://openresearch.surrey.ac.uk/esploro/outputs/doctoral/Towards-generic-optimal-domestic-heating-control/99511152402346">Brown,
+                                    C., Jin, Y., Leach, M. et al.Towards Generic-Optimal Domestic Heating Control
+                                    (2016)</a></p></li>
+                                <br>
+                            </ol>
                             <!-- <button class="btn"><a href="https://www.researchgate.net/publication/374419150_A_Nonlinear_Extension_to_Classical_Filters_for_Washout_Miscue_Prevention/"><span class="btn-inner">White Paper</span></a></button> -->
                         </div>
                     </div>
@@ -303,16 +373,19 @@
                                 <div class="text-h1 text-wrap">Supporting academic research</div>
                                 <div class="frame-21">
                                     <p>
-                                        BrownSim is committed to academic research. Be part of the BrownSim community or help improve your
+                                        BrownSim is committed to academic research. Be part of the BrownSim community or
+                                        help improve your
                                         favorite cueing software.
                                     </p>
-                                    <a href="https://forms.gle/WfKehbHPcY7quKu7A" button class="btn"><span class="btn-inner">Request Academic License</span></button></a>
+                                    <a href="https://forms.gle/WfKehbHPcY7quKu7A" button class="btn"><span
+                                            class="btn-inner">Request Academic License</span></button></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-5 rectangle-4">
-                            <img class="image-shadow" src="assets/img/Academic-Research.webp" alt="A board with academic research writings" />
+                            <img class="image-shadow" src="assets/img/Academic-Research.webp"
+                                 alt="A board with academic research writings"/>
                         </div>
                     </div>
 
