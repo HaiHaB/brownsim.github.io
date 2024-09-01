@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import {FBXLoader} from 'three/addons/loaders/FBXLoader.js';
-import {FontLoader} from 'three/addons/loaders/FontLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import {FBXLoader} from 'three/addons/loaders/FBXLoader.min.js';
+//import {FontLoader} from 'three/addons/loaders/FontLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.min.js';
 
 const Renderer = {
     container: null,
@@ -26,7 +26,7 @@ const Renderer = {
         this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
 
         Head.onResize();
-        Chart.onResize();
+        //Chart.onResize();
     },
 
     onAnimate: function () {
@@ -125,7 +125,7 @@ const Head = {
     }
 };
 
-
+/*
 const Chart = {
     data: [],
     chartScene: null,
@@ -523,6 +523,7 @@ const Axis = {
         renderer.render(this.axisScene, this.axisCamera);
     },
 };
+*/
 
 (function () {
 
