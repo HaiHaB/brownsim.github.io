@@ -36,7 +36,7 @@
         buttonTextColor: '#49424a',
 
         // Notice background color
-        noticeBgColor: '#2a1609',
+        noticeBgColor: '#000000',
 
         // Notice text color
         noticeTextColor: '#f1cfb9',
