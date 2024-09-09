@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {FBXLoader} from 'three/addons/loaders/FBXLoader.min.js';
-//import {FontLoader} from 'three/addons/loaders/FontLoader.js';
+import {FontLoader} from 'three/addons/loaders/FontLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.min.js';
 
 const Renderer = {
@@ -26,15 +26,16 @@ const Renderer = {
         this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
 
         Head.onResize();
-        //Chart.onResize();
+        Chart.onResize();
     },
 
     onAnimate: function () {
         Head.onAnimate();
-        //Chart.onAnimate();
-        //Matrix.onAnimate();
-        //Circle.onAnimate();
-        //Axis.onAnimate();
+        Matrix.onAnimate();
+        Chart.onAnimate();
+
+        // Circle.onAnimate();
+        // Axis.onAnimate();
     },
 };
 
@@ -68,7 +69,7 @@ const Head = {
         this.controls.enableZoom = false; // to disable zoom
 
         //@Todo Add axis helper, but better to remove it
-        const axesHelper = new THREE.AxesHelper(50);
+        const axesHelper = new THREE.AxesHelper(17);
         this.scene.add(axesHelper)
 
         // Load avatar
@@ -105,8 +106,9 @@ const Head = {
     },
 
     onResize: function () {
-        this.camera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
-        this.camera.updateProjectionMatrix();
+		// No longer allow zoom
+        // this.camera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
+        // this.camera.updateProjectionMatrix();
     },
 
     onAnimate: function () {
@@ -122,90 +124,8 @@ const Head = {
         renderer.setScissor(0, 0, container.clientWidth, container.clientHeight);
         renderer.setScissorTest(true);
         renderer.render(this.scene, this.camera);
+		console.log("HEllo World: " + this.controls.rotateSpeed )
     }
-};
-
-/*
-const Chart = {
-    data: [],
-    chartScene: null,
-    chartCamera: null,
-    chartLine: null,
-    counter: 0,
-
-    init: function () {
-
-        // Create chart scene
-        this.chartScene = new THREE.Scene();
-        this.chartCamera = new THREE.OrthographicCamera(0, 51, 51, 0, -1, 1); // Adjusted right and top parameters
-
-        // Initialize chart line
-        const chartMaterial = new THREE.LineBasicMaterial({color: 0xFF00ff});
-        const chartGeometry = new THREE.BufferGeometry().setFromPoints([]);
-
-        this.chartLine = new THREE.Line(chartGeometry, chartMaterial);
-        this.chartScene.add(this.chartLine);
-
-        // Generate initial chart data
-        for (let i = 0; i < 50; i++) {
-            this.data.push({x: i, y: (Math.sin(i / 5)) * 15 + 25});
-        }
-
-        // Create X and Y axes
-        const axesMaterial = new THREE.LineBasicMaterial({color: 0xFFFF00}); // Yellow color for axes
-
-        // X axis
-        const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(51, 1, 0)]);
-        const xAxis = new THREE.Line(xAxisGeometry, axesMaterial);
-        this.chartScene.add(xAxis);
-
-        // Arrow for X axis
-        const xAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(0.5, 2, 4), axesMaterial);
-        xAxisArrow.position.set(50, 1, 0); // Adjusted x position
-        xAxisArrow.rotation.z = -Math.PI / 2;
-        this.chartScene.add(xAxisArrow);
-
-        // Y axis
-        const yAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(1, 51, 0)]);
-        const yAxis = new THREE.Line(yAxisGeometry, axesMaterial);
-        this.chartScene.add(yAxis);
-
-        // Arrow for Y axis
-        const yAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(0.5, 2, 4), axesMaterial);
-        yAxisArrow.position.set(1, 50, 0); // Adjusted y position
-        this.chartScene.add(yAxisArrow);
-    },
-
-    onResize: function () {
-    },
-
-    onAnimate: function () {
-        this.counter++; // Increment the counter
-
-        // Only add a new data point every 2 frames - use to slow down the chart
-        if (this.counter % 2 === 0) {
-            this.counter = 0;
-
-            this.data.shift();
-
-            let firstPoint = this.data[0];
-            let lastPoint = this.data[this.data.length - 1];
-            this.data.push({x: lastPoint.x + 1, y: (Math.sin((lastPoint.x + 1) / 5)) * 15 + 25});
-
-            const points = this.data.map(d => new THREE.Vector3(d.x - firstPoint.x + 1, d.y, 0));
-            this.chartLine.geometry.setFromPoints(points);
-        }
-
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        const chartWidth = container.clientWidth / 4;
-        const chartHeight = container.clientHeight / 4;
-
-        renderer.setViewport(0, 0, chartWidth, chartHeight);
-        renderer.setScissor(0, 0, chartWidth, chartHeight);
-        renderer.setScissorTest(true);
-        renderer.render(this.chartScene, this.chartCamera);
-    },
 };
 
 const Matrix = {
@@ -363,6 +283,94 @@ const Matrix = {
     },
 };
 
+const Chart = {
+    data: [],
+    chartScene: null,
+    chartCamera: null,
+    chartLine: null,
+    counter: 0,
+
+    init: function () {
+
+        // Create chart scene
+        this.chartScene = new THREE.Scene();
+        this.chartCamera = new THREE.OrthographicCamera(0, 51, 51, 0, -1, 1); // Adjusted right and top parameters
+
+        // Initialize chart line
+        const chartMaterial = new THREE.LineBasicMaterial({color: 0xFF00ff});
+        const chartGeometry = new THREE.BufferGeometry().setFromPoints([]);
+
+        this.chartLine = new THREE.Line(chartGeometry, chartMaterial);
+        this.chartScene.add(this.chartLine);
+
+        // Generate initial chart data
+        for (let i = 0; i < 50; i++) {
+            this.data.push({x: i, y: (Math.sin(i / 5)) * 15 + 25});
+        }
+
+        // Create X and Y axes
+        const axesMaterial = new THREE.LineBasicMaterial({color: 0xFFFF00}); // Yellow color for axes
+
+        // X axis
+        const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(51, 1, 0)]);
+        const xAxis = new THREE.Line(xAxisGeometry, axesMaterial);
+        this.chartScene.add(xAxis);
+
+        // Arrow for X axis
+        const xAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
+        xAxisArrow.position.set(50, 1, 0); // Adjusted x position
+        xAxisArrow.rotation.z = -Math.PI / 2;
+        this.chartScene.add(xAxisArrow);
+
+        // Y axis
+        const yAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(1, 51, 0)]);
+        const yAxis = new THREE.Line(yAxisGeometry, axesMaterial);
+        this.chartScene.add(yAxis);
+
+        // Arrow for Y axis
+        const yAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
+        yAxisArrow.position.set(1, 50, 0); // Adjusted y position
+        this.chartScene.add(yAxisArrow);
+
+
+    },
+
+    onResize: function () {
+    },
+
+    onAnimate: function () {
+        this.counter++; // Increment the counter
+
+        // Only add a new data point every 2 frames - use to slow down the chart
+        if (this.counter % 2 === 0) {
+            this.counter = 0;
+
+            this.data.shift();
+
+			//TODO: This should be the speed of rotation instead
+            let firstPoint = this.data[0];
+            let lastPoint = this.data[this.data.length - 1];
+            this.data.push({x: lastPoint.x + 1, y: (Math.sin((lastPoint.x + 1) / 5)) * 15 + 25});
+
+            const points = this.data.map(d => new THREE.Vector3(d.x - firstPoint.x + 1, d.y, 0));
+            this.chartLine.geometry.setFromPoints(points);
+        }
+
+        const renderer = Renderer.renderer;
+        const container = Renderer.container;
+        const chartWidth = container.clientWidth / 4;
+        const chartHeight = container.clientHeight / 4;
+
+        renderer.setViewport(0, 0, chartWidth, chartHeight);
+        renderer.setScissor(0, 0, chartWidth, chartHeight);
+        renderer.setScissorTest(true);
+        renderer.render(this.chartScene, this.chartCamera);
+    },
+};
+
+
+
+
 const Circle = {
     circleScene: null,
     circleCamera: null,
@@ -426,6 +434,7 @@ const Circle = {
                 const line2 = new THREE.Line(lineGeometry2, material);
                 this.circleScene.add(line2);
                 this.lines.push(line2);
+				console.log("Inisde init circle")
             }
         });
     },
@@ -463,7 +472,7 @@ const Circle = {
         renderer.render(this.circleScene, this.circleCamera);
     },
 };
-
+/*
 const Axis = {
     axisScene: null,
     axisCamera: null,
@@ -474,29 +483,6 @@ const Axis = {
         this.axisCamera = new THREE.PerspectiveCamera(75, Renderer.container.clientWidth / Renderer.container.clientHeight, 0.1, 1000);
         this.axisCamera.position.set(9, 9, 9); // Adjust the camera position
         this.axisCamera.lookAt(0, 0, 0); // Make the camera look at the origin
-
-        // Create an AxesHelper and add it to the scene
-        const axesHelper = new THREE.AxesHelper(7); // Reduce the size of the axes
-        const axesMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-        const axes = new THREE.LineSegments(axesHelper.geometry, axesMaterial);
-        this.axisScene.add(axes);
-
-        // Create ArrowHelpers for each axis
-        const arrowSize = 1.4; // Reduce the size of the arrows
-        const arrowDir = new THREE.Vector3(1, 0, 0);
-        const arrowOrigin = new THREE.Vector3(7, 0, 0); // Adjust the origin of the arrows
-        const arrowHelperX = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xffffff);
-        this.axisScene.add(arrowHelperX);
-
-        arrowDir.set(0, 1, 0);
-        arrowOrigin.set(0, 7, 0);
-        const arrowHelperY = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xffffff);
-        this.axisScene.add(arrowHelperY);
-
-        arrowDir.set(0, 0, 1);
-        arrowOrigin.set(0, 0, 7);
-        const arrowHelperZ = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xffffff);
-        this.axisScene.add(arrowHelperZ);
     },
 
     onResize: function () {
@@ -536,10 +522,10 @@ const Axis = {
 
     Head.init();
 
-    /*
-    Chart.init();
     Matrix.init();
+    Chart.init();
+
     Circle.init();
-    Axis.init();
-    */
+    // Axis.init();
+
 })();
