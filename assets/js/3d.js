@@ -82,7 +82,7 @@ const Head = {
 
                 // Create wireframe geometry and material
                 const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
-                const wireframeMaterial = new THREE.LineBasicMaterial({color: 0xffffff});
+                const wireframeMaterial = new THREE.LineBasicMaterial({color: 0xc24f04});
                 const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
 
                 // Add the wireframe as a child of the mesh
