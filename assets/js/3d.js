@@ -71,11 +71,11 @@ const Head = {
         this.controls.enableZoom = false; // to disable zoom
 		this.controls.enablePan = false; // to disable panning
 
-        //@Todo Add axis helper, but better to remove it
-        const axesHelper = new THREE.AxesHelper(17);
-		// red, yellow, blue
-		axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
-        this.scene.add(axesHelper)
+        // //@Todo Add axis helper, but better to remove it
+        // const axesHelper = new THREE.AxesHelper(17);
+		// // red, yellow, blue
+		// axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
+        // this.scene.add(axesHelper)
 
         // Load avatar
         fbx.traverse(function (child) {
@@ -150,7 +150,7 @@ const Matrix = {
         for (let i = 0; i < 3; i++) {
             let matrix = document.createElement('div');
             matrix.classList.add('matrix');
-            matrix.innerHTML = '<span class="matrix-text">i3</span>' +
+            matrix.innerHTML = '<span class="matrix-text">H</span>' +
                 '<span class="matrix-line top-left"></span>' +
                 '<span class="matrix-line top-right"></span>' +
                 '<span class="matrix-line bottom-left"></span>' +
@@ -185,16 +185,20 @@ const Matrix = {
         // Delay and random number generation
         this.counter++; // Increment the counter
 
-        // Only update the numbers every 5 frames
-        if (this.counter % 5 === 0) {
+        // Only update the numbers every 10 frames
+        if (this.counter % 15 === 0) {
             this.counter = 0;
 
-            // Generate new random numbers
+            // Get quanternion of the head
+
             const newMatrix = [
-                [(Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4)],
-                [(Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4)],
-                [(Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4)],
+                // [(Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4)],
+				[(Head.fbx.quaternion.x).toFixed(3), (Head.fbx.quaternion.y).toFixed(3),(Head.fbx.quaternion.z).toFixed(3), (Head.fbx.quaternion.w).toFixed(3)],
+                [0, 0, 0, 0],
+                [0, 0, 0, 0],
             ];
+
+			// Need an old matrix to calculate the first derivatives
 
             for (let i = 0; i < newMatrix.length; i++) {
                 for (let j = 0; j < newMatrix[i].length; j++) {
