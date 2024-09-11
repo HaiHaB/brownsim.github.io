@@ -67,13 +67,14 @@ const Head = {
 
         // Add OrbitControls for better interaction
         this.controls = new OrbitControls(this.camera, Renderer.renderer.domElement);
-        this.controls.autoRotate = true; // set the autoRotate property to true
-        this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
+
         this.controls.enableZoom = false; // to disable zoom
 		this.controls.enablePan = false; // to disable panning
 
         //@Todo Add axis helper, but better to remove it
         const axesHelper = new THREE.AxesHelper(17);
+		// red, yellow, blue
+		axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
         this.scene.add(axesHelper)
 
         // Load avatar
@@ -107,6 +108,9 @@ const Head = {
         this.scene.add(fbx);
 
         this.fbx = fbx;
+
+		this.axis = new THREE.Vector3(0, 0, 0).normalize();
+		this.speed = 1;
     },
 
     onResize: function () {
@@ -117,6 +121,9 @@ const Head = {
     onAnimate: function () {
 
         if (this.fbx === null) return;
+
+        this.fbx.rotateY(0.003);
+
 
         // Auto-rotate camera
         this.controls.update();
@@ -422,7 +429,7 @@ const Axis = {
             return;
         }
 
-        this.axisScene.rotation.copy(Head.camera.rotation);
+        this.axisScene.rotation.copy(Head.fbx.rotation);
 
         const renderer = Renderer.renderer;
         const container = Renderer.container;
