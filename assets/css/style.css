@@ -160,6 +160,68 @@ a {
 
 /* ======== Menu =========*/
 
+.matrix-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.matrix {
+  border-left: 1px solid #E29E73;
+  border-right: 1px solid #E29E73;
+  padding: 6px 10px;
+  position: absolute;
+  color: #E29E73;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.matrix-line {
+  position: absolute;
+  width: 4px;
+  height: 1px;
+  background: #E29E73;
+}
+
+.matrix .top-left {
+  top: 0;
+  left: 0;
+}
+
+.matrix .top-right {
+  top: 0;
+  right: 0;
+}
+
+.matrix .bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.matrix .bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.matrix-text {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.circle {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  right: 0;
+}
+
+/* ======== UI =========*/
+
 .ui-dropdown {
   --form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 
@@ -2416,5 +2478,11 @@ a {
 
   .leadership .frame-6 {
     margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .matrix-container, .circle {
+    display: none;
   }
 }

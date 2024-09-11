@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {FBXLoader} from 'three/addons/loaders/FBXLoader.min.js';
-import {FontLoader} from 'three/addons/loaders/FontLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.min.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.min.js';
 
 const Renderer = {
     container: null,
@@ -26,7 +25,11 @@ const Renderer = {
         this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
 
         Head.onResize();
+        Matrix.onResize();
         Chart.onResize();
+
+        Circle.onResize();
+        Axis.onResize();
     },
 
     onAnimate: function () {
@@ -34,8 +37,8 @@ const Renderer = {
         Matrix.onAnimate();
         Chart.onAnimate();
 
-        // Circle.onAnimate();
-        // Axis.onAnimate();
+        Circle.onAnimate();
+        Axis.onAnimate();
     },
 };
 
@@ -57,7 +60,7 @@ const Head = {
 
         // Camera setup
         this.camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 2000);
-        this.camera.position.set(0, 0, 50);
+        this.camera.position.set(0, 0, 60);
 
         // Scene setup
         this.scene = new THREE.Scene();
@@ -106,9 +109,8 @@ const Head = {
     },
 
     onResize: function () {
-		// No longer allow zoom
-        // this.camera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
-        // this.camera.updateProjectionMatrix();
+        this.camera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
+        this.camera.updateProjectionMatrix();
     },
 
     onAnimate: function () {
@@ -124,90 +126,53 @@ const Head = {
         renderer.setScissor(0, 0, container.clientWidth, container.clientHeight);
         renderer.setScissorTest(true);
         renderer.render(this.scene, this.camera);
-		console.log("HEllo World: " + this.controls.rotateSpeed )
     }
 };
 
 const Matrix = {
-    matrixScene: null,
-    matrixCamera: null,
-    matrixText: [],
-    font: null,
     counter: 0,
+    $num: [],
+    $matrixes: [],
 
     init: function () {
-        // Create matrix scene
-        this.matrixScene = new THREE.Scene();
-        this.matrixCamera = new THREE.OrthographicCamera(0, 30, 60, 0, -1, 1);
 
-        const loader = new FontLoader();
-        loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
-            this.font = font;
+        let container = document.createElement('div');
+        container.classList.add('matrix-container');
 
-            // Create lines
-            const symbols = ['i1', 'i2', 'i3'];
-            const color = new THREE.Color(0xFFFFFF);
-            const matLite = new THREE.MeshBasicMaterial({
-                color: color,
-                //transparent: true,
-                //opacity: 0.4,
-                side: THREE.DoubleSide
-            });
+        for (let i = 0; i < 3; i++) {
+            let matrix = document.createElement('div');
+            matrix.classList.add('matrix');
+            matrix.innerHTML = '<span class="matrix-text">i3</span>' +
+                '<span class="matrix-line top-left"></span>' +
+                '<span class="matrix-line top-right"></span>' +
+                '<span class="matrix-line bottom-left"></span>' +
+                '<span class="matrix-line bottom-right"></span>' +
+                '<div class="num">0.0000</div>' +
+                '<div class="num">0.0000</div>' +
+                '<div class="num">0.0000</div>' +
+                '<div class="num">0.0000</div>';
 
-            for(let i = 0; i < 3; i++) {
+            container.appendChild(matrix);
 
-                const offset = 5 + (i * 20);
+            this.$matrixes[i] = matrix;
+            this.$num[i] = matrix.querySelectorAll('.num');
+        }
 
-                const shapes = this.font.generateShapes(symbols[i], 1);
-                const material = new THREE.LineBasicMaterial({color: 0xFFFFFF});
+        Renderer.container.appendChild(container);
 
-                const geometry = new THREE.ShapeGeometry(shapes);
-                const text = new THREE.Mesh(geometry, matLite);
-                text.position.x = 2;
-                text.position.y = 9 + (i * 20);
-                this.matrixScene.add(text);
+        // resize
+        this.onResize();
+    },
 
-                const points = [
-                    new THREE.Vector3(5, offset + 4.5, 0),
-                    new THREE.Vector3(6, offset + 4.5, 0),
-                ];
-                const geom = new THREE.BufferGeometry().setFromPoints(points);
-                const line = new THREE.Line(geom, material);
-                this.matrixScene.add(line);
+    onResize: function () {
+        let clientHeight = Renderer.container.clientHeight;
 
-                const pointsL = [
-                    new THREE.Vector3(11, offset, 0),
-                    new THREE.Vector3(10, offset, 0),
-                    new THREE.Vector3(10, offset + 10, 0),
-                    new THREE.Vector3(11, offset + 10, 0),
-                ];
-                const geometryL = new THREE.BufferGeometry().setFromPoints(pointsL);
-                const lineL = new THREE.Line(geometryL, material);
-                this.matrixScene.add(lineL);
-
-                const pointsR = [
-                    new THREE.Vector3(19, offset, 0),
-                    new THREE.Vector3(20, offset, 0),
-                    new THREE.Vector3(20, offset + 10, 0),
-                    new THREE.Vector3(19, offset + 10, 0),
-                ];
-                const geometryR = new THREE.BufferGeometry().setFromPoints(pointsR);
-                const lineR = new THREE.Line(geometryR, material);
-                this.matrixScene.add(lineR);
-            }
-        });
+        for (let i = 0; i < 3; i++) {
+            this.$matrixes[i].style.top = (clientHeight / 4) * i + 'px';
+        }
     },
 
     onAnimate: function () {
-
-        if (!this.font) {
-            return;
-        }
-
-        // Rotate each text mesh
-        this.matrixText.forEach(text => {
-            text.rotation.y += 0.01;
-        });
 
         // Delay and random number generation
         this.counter++; // Increment the counter
@@ -223,64 +188,13 @@ const Matrix = {
                 [(Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4), (Math.random() * 9).toFixed(4)],
             ];
 
-            // Update the matrix with the new numbers
-            this.updateMatrix(newMatrix);
-        }
-
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        const matrixWidth = container.clientWidth / 4;
-        const matrixHeight = container.clientHeight / 4;
-
-        renderer.setViewport(0, matrixHeight, matrixWidth, matrixHeight * 3);
-        renderer.setScissor(0, matrixHeight, matrixWidth, matrixHeight * 3);
-        renderer.setScissorTest(true);
-        renderer.render(this.matrixScene, this.matrixCamera);
-    },
-
-    updateMatrix: function (matrixes) {
-        // Remove old text meshes from the scene
-        this.matrixText.forEach(text => {
-            this.matrixScene.remove(text);
-        });
-
-        // Clear the matrixText array
-        this.matrixText = [];
-
-        // Create new text meshes with updated numbers
-        const color = new THREE.Color(0xFFFFFF);
-        const matLite = new THREE.MeshBasicMaterial({
-            color: color,
-            //transparent: true,
-            //opacity: 0.4,
-            side: THREE.DoubleSide
-        });
-
-        matrixes.forEach((array, i) => {
-            array.forEach((str, j) => {
-                let offset = 0;
-
-                for (const letter of str) {
-                    const shapes = this.font.generateShapes(letter, 1);
-                    const geometry = new THREE.ShapeGeometry(shapes);
-                    const text = new THREE.Mesh(geometry, matLite);
-
-                    text.position.x = 12 + offset;
-                    text.position.y = 7 + (i * 20) + j * 1.5;
-
-                    this.matrixScene.add(text);
-                    this.matrixText.push(text);
-
-                    // Increase the offset for the next character
-                    if (letter === '.') {
-                        offset += 0.7;
-                    } else {
-                        offset += 1.2;
-                    }
+            for (let i = 0; i < newMatrix.length; i++) {
+                for (let j = 0; j < newMatrix[i].length; j++) {
+                    this.$num[i][j].innerHTML = newMatrix[i][j];
                 }
-            });
-        });
-    },
+            }
+        }
+    }
 };
 
 const Chart = {
@@ -289,6 +203,7 @@ const Chart = {
     chartCamera: null,
     chartLine: null,
     counter: 0,
+    display: true,
 
     init: function () {
 
@@ -297,7 +212,7 @@ const Chart = {
         this.chartCamera = new THREE.OrthographicCamera(0, 51, 51, 0, -1, 1); // Adjusted right and top parameters
 
         // Initialize chart line
-        const chartMaterial = new THREE.LineBasicMaterial({color: 0xFF00ff});
+        const chartMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
         const chartGeometry = new THREE.BufferGeometry().setFromPoints([]);
 
         this.chartLine = new THREE.Line(chartGeometry, chartMaterial);
@@ -309,7 +224,7 @@ const Chart = {
         }
 
         // Create X and Y axes
-        const axesMaterial = new THREE.LineBasicMaterial({color: 0xFFFF00}); // Yellow color for axes
+        const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73}); // Yellow color for axes
 
         // X axis
         const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(51, 1, 0)]);
@@ -332,13 +247,19 @@ const Chart = {
         yAxisArrow.position.set(1, 50, 0); // Adjusted y position
         this.chartScene.add(yAxisArrow);
 
-
+        this.onResize();
     },
 
     onResize: function () {
+        this.display = window.innerWidth >= 480;
     },
 
     onAnimate: function () {
+
+        if (!this.display) {
+            return;
+        }
+
         this.counter++; // Increment the counter
 
         // Only add a new data point every 2 frames - use to slow down the chart
@@ -347,7 +268,7 @@ const Chart = {
 
             this.data.shift();
 
-			//TODO: This should be the speed of rotation instead
+            //TODO: This should be the speed of rotation instead
             let firstPoint = this.data[0];
             let lastPoint = this.data[this.data.length - 1];
             this.data.push({x: lastPoint.x + 1, y: (Math.sin((lastPoint.x + 1) / 5)) * 15 + 25});
@@ -368,114 +289,91 @@ const Chart = {
     },
 };
 
-
-
-
 const Circle = {
-    circleScene: null,
-    circleCamera: null,
-    circles: [],
-    lines: [],
-    degrees: [],
-    radius: 8,
-    font: null,
+
+    $arcs: [],
+    $circles: [],
+    preAngles: [0, 0, 0],
+    nextAngles: [1, 1, 1],
     counter: 0,
 
     init: function () {
-        // Create circle scene
-        this.circleScene = new THREE.Scene();
-        this.circleCamera = new THREE.OrthographicCamera(0, 30, 60, 0, -1, 1);
 
-        const loader = new FontLoader();
-        loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
-            this.font = font;
+        for (let i = 0; i < 3; i++) {
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.innerHTML = '<svg viewBox="0 0 100 100">\n' +
+                '                <circle cx="50" cy="50" r="49" stroke="#E29E73" stroke-width="1" fill="transparent" />\n' +
+                '                <path fill="#E29E73" />\n' +
+                '            </svg>';
 
-            // Create circles and lines
-            const symbols = ['y', 'p', 'R'];
-            const material = new THREE.LineBasicMaterial({color: 0xFFFFFF});
-            const color = new THREE.Color(0xFFFFFF);
-            const matLite = new THREE.MeshBasicMaterial({
-                color: color,
-                //transparent: true,
-                //opacity: 0.4,
-                side: THREE.DoubleSide
-            });
+            Renderer.container.appendChild(circle);
 
-            for (let i = 0; i < 3; i++) {
+            this.$circles[i] = circle;
+            this.$arcs[i] = circle.querySelector('path');
+        }
 
-                const shapes = this.font.generateShapes(symbols[i], 1);
-                const material = new THREE.LineBasicMaterial({color: 0xFFFFFF});
+        // resize
+        this.onResize();
+    },
 
-                const textGeometry = new THREE.ShapeGeometry(shapes);
-                const text = new THREE.Mesh(textGeometry, matLite);
-                text.position.x = 8;
-                text.position.y = 12 + (i * 20);
-                this.circleScene.add(text);
+    onResize: function () {
+        let clientHeight = Renderer.container.clientHeight;
 
-                const geometry = new THREE.CircleGeometry(this.radius, 32); // 5 is the radius and 32 is the number of segments
-                const edges = new THREE.EdgesGeometry(geometry);
-                const circle = new THREE.Line(edges, material);
-                circle.position.x = 20;
-                circle.position.y = 12 + (i * 20); // Adjust the x position for each circle
-                this.circleScene.add(circle);
-                this.circles.push(circle);
-
-                // Create a line from the center to the right of the circle
-                const lineGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(circle.position.x, circle.position.y, 0), new THREE.Vector3(circle.position.x + this.radius, circle.position.y, 0)]);
-                const line = new THREE.Line(lineGeometry, material);
-                this.circleScene.add(line);
-                this.lines.push(line);
-
-                // Create a line from the center to a point on the circle based on a degree value
-                const degree = Math.random() * 360; // Random initial degree
-                this.degrees.push(degree);
-                const radian = degree * Math.PI / 180;
-                const lineGeometry2 = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(circle.position.x, circle.position.y, 0), new THREE.Vector3(circle.position.x + this.radius * Math.cos(radian), circle.position.y + this.radius * Math.sin(radian), 0)]);
-                const line2 = new THREE.Line(lineGeometry2, material);
-                this.circleScene.add(line2);
-                this.lines.push(line2);
-				console.log("Inisde init circle")
-            }
-        });
+        for (let i = 0; i < 3; i++) {
+            this.$circles[i].style.top = (clientHeight / 4) * i + 'px';
+        }
     },
 
     onAnimate: function () {
-        if (!this.font) {
-            return;
-        }
-
         // Delay and random number generation
         this.counter++; // Increment the counter
 
         // Only update the numbers every 10 frames
-        if (this.counter % 5 === 0) {
+        if (this.counter % 50 === 0) {
             this.counter = 0;
 
-            // Update the degree values randomly and update the lines
-            for (let i = 0; i < 3; i++) {
-                this.degrees[i] += (Math.random() - 0.5) * 45; // Random change in degree
-                const radian = this.degrees[i] * Math.PI / 180;
-                const circle = this.circles[i];
-                const line = this.lines[i * 2 + 1]; // The line from the center to a point on the circle
-                line.geometry.setFromPoints([new THREE.Vector3(circle.position.x, circle.position.y, 0), new THREE.Vector3(circle.position.x + this.radius * Math.cos(radian), circle.position.y + this.radius * Math.sin(radian), 0)]);
-            }
+            this.preAngles = this.nextAngles;
+            this.nextAngles = [Math.random() * 360, Math.random() * 360, Math.random() * 360];
         }
 
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        const circleWidth = container.clientWidth / 4;
-        const circleHeight = container.clientHeight / 4;
+        // Update the degree values randomly and update the lines
+        for (let i = 0; i < 3; i++) {
+            const progress = Math.min(this.counter / 50, 1); // Calculate progress as a fraction of time
+            const currentAngle = this.preAngles[i] + (this.nextAngles[i] - this.preAngles[i]) * progress;
 
-        renderer.setViewport(3 * circleWidth, circleHeight, circleWidth, circleHeight * 3);
-        renderer.setScissor(3 * circleWidth, circleHeight, circleWidth, circleHeight * 3);
-        renderer.setScissorTest(true);
-        renderer.render(this.circleScene, this.circleCamera);
+            this.$arcs[i].setAttribute('d', this.render(50, 50, 47, currentAngle));
+        }
+    },
+
+    polarToCartesian: function (centerX, centerY, radius, angleInDegrees) {
+        const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
+
+        return {
+            x: centerX + (radius * Math.cos(angleInRadians)),
+            y: centerY + (radius * Math.sin(angleInRadians))
+        };
+    },
+
+    render: function (x, y, radius, endAngle) {
+        const startAngle = 0; // Pie starts at 0 degrees
+        const start = this.polarToCartesian(x, y, radius, endAngle);
+        const end = this.polarToCartesian(x, y, radius, startAngle);
+        const largeArcFlag = endAngle <= 180 ? "0" : "1";
+
+        return [
+            "M", x, y, // Move to the center of the circle
+            "L", end.x, end.y, // Draw a line to the start of the arc
+            "A", radius, radius, 0, largeArcFlag, 1, start.x, start.y, // Draw the arc
+            "Z" // Close the path back to the center
+        ].join(" ");
     },
 };
-/*
+
 const Axis = {
     axisScene: null,
     axisCamera: null,
+    display: true,
 
     init: function () {
         // Create axis scene
@@ -483,16 +381,43 @@ const Axis = {
         this.axisCamera = new THREE.PerspectiveCamera(75, Renderer.container.clientWidth / Renderer.container.clientHeight, 0.1, 1000);
         this.axisCamera.position.set(9, 9, 9); // Adjust the camera position
         this.axisCamera.lookAt(0, 0, 0); // Make the camera look at the origin
+
+        // Create an AxesHelper and add it to the scene
+        const axesHelper = new THREE.AxesHelper(7); // Reduce the size of the axes
+        const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
+        const axes = new THREE.LineSegments(axesHelper.geometry, axesMaterial);
+        this.axisScene.add(axes);
+
+        // Create ArrowHelpers for each axis
+        const arrowSize = 1.4; // Reduce the size of the arrows
+        const arrowDir = new THREE.Vector3(1, 0, 0);
+        const arrowOrigin = new THREE.Vector3(7, 0, 0); // Adjust the origin of the arrows
+        const arrowHelperX = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+        this.axisScene.add(arrowHelperX);
+
+        arrowDir.set(0, 1, 0);
+        arrowOrigin.set(0, 7, 0);
+        const arrowHelperY = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+        this.axisScene.add(arrowHelperY);
+
+        arrowDir.set(0, 0, 1);
+        arrowOrigin.set(0, 0, 7);
+        const arrowHelperZ = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+        this.axisScene.add(arrowHelperZ);
+
+        this.onResize();
     },
 
     onResize: function () {
         this.axisCamera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
         this.axisCamera.updateProjectionMatrix();
+
+        this.display = window.innerWidth >= 480;
     },
 
     onAnimate: function () {
 
-        if (!Head.fbx) {
+        if (!Head.fbx || !this.display) {
             return;
         }
 
@@ -509,12 +434,12 @@ const Axis = {
         renderer.render(this.axisScene, this.axisCamera);
     },
 };
-*/
+
 
 (function () {
 
     // Check if the avatar container exists
-    if (!document.getElementById('avatar-container')){
+    if (!document.getElementById('avatar-container')) {
         return;
     }
 
@@ -526,6 +451,6 @@ const Axis = {
     Chart.init();
 
     Circle.init();
-    // Axis.init();
+    Axis.init();
 
 })();
