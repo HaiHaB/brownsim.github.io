@@ -70,6 +70,7 @@ const Head = {
         this.controls.autoRotate = true; // set the autoRotate property to true
         this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
         this.controls.enableZoom = false; // to disable zoom
+		this.controls.enablePan = false; // to disable panning
 
         //@Todo Add axis helper, but better to remove it
         const axesHelper = new THREE.AxesHelper(17);
