@@ -210,6 +210,8 @@ const Matrix = {
                 secondDerivatives,
             ];
 
+			// Need an old matrix to calculate the first derivatives
+
             for (let i = 0; i < newMatrix.length; i++) {
                 for (let j = 0; j < newMatrix[i].length; j++) {
                     this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(3);
