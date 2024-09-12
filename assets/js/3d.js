@@ -124,7 +124,6 @@ const Head = {
 
         this.fbx.rotateY(0.003);
 
-
         // Auto-rotate camera
         this.controls.update();
 
@@ -316,8 +315,6 @@ const Circle = {
 
     $arcs: [],
     $circles: [],
-    preAngles: [0, 0, 0],
-    nextAngles: [1, 1, 1],
     counter: 0,
 
     init: function () {
@@ -349,45 +346,44 @@ const Circle = {
     },
 
     onAnimate: function () {
-        // Delay and random number generation
+        // Delay and get euler angles
         this.counter++; // Increment the counter
+        if  (Head.fbx == null)
+            return;
 
-        // Only update the numbers every 10 frames
-        if (this.counter % 50 === 0) {
+        // Only update the numbers every 2 frames
+        if (this.counter % 2 === 0) {
             this.counter = 0;
+            // This is for euler_angles: yaw, pitch, roll
+            const current_euler_angles = [Head.fbx.rotation.x, Head.fbx.rotation.y, Head.fbx.rotation.z];
 
-            this.preAngles = this.nextAngles;
-            this.nextAngles = [Math.random() * 360, Math.random() * 360, Math.random() * 360];
-        }
 
-        // Update the degree values randomly and update the lines
-        for (let i = 0; i < 3; i++) {
-            const progress = Math.min(this.counter / 50, 1); // Calculate progress as a fraction of time
-            const currentAngle = this.preAngles[i] + (this.nextAngles[i] - this.preAngles[i]) * progress;
+            // Update the degree values and update the lines
+            for (let i = 0; i < 3; i++) {
+                this.$arcs[i].setAttribute('d', this.render(50, 50, 47, current_euler_angles[i]));
+            }
 
-            this.$arcs[i].setAttribute('d', this.render(50, 50, 47, currentAngle));
         }
     },
 
-    polarToCartesian: function (centerX, centerY, radius, angleInDegrees) {
-        const angleInRadians = (angleInDegrees - 90) * Math.PI / 180.0;
-
+    radiantToCartesian: function (centerX, centerY, radius, radiant) {
         return {
-            x: centerX + (radius * Math.cos(angleInRadians)),
-            y: centerY + (radius * Math.sin(angleInRadians))
+            x: centerX + (radius * Math.cos(radiant)),
+            y: centerY + (radius * Math.sin(radiant))
         };
     },
 
     render: function (x, y, radius, endAngle) {
         const startAngle = 0; // Pie starts at 0 degrees
-        const start = this.polarToCartesian(x, y, radius, endAngle);
-        const end = this.polarToCartesian(x, y, radius, startAngle);
+        const end = this.radiantToCartesian(x, y, radius, endAngle);
+        const start = this.radiantToCartesian(x, y, radius, startAngle);
         const largeArcFlag = endAngle <= 180 ? "0" : "1";
 
         return [
             "M", x, y, // Move to the center of the circle
-            "L", end.x, end.y, // Draw a line to the start of the arc
-            "A", radius, radius, 0, largeArcFlag, 1, start.x, start.y, // Draw the arc
+            "L", start.x, start.y, // Draw a line to the start of the arc
+            // https://www.nan.fyi/svg-paths/arcs
+             "A", radius, radius, 0, largeArcFlag, 1, end.x, end.y, // Draw the arc, 1 means clockwise
             "Z" // Close the path back to the center
         ].join(" ");
     },
