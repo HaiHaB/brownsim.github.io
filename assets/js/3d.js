@@ -187,40 +187,28 @@ const Matrix = {
             return;
         }
 
-        // Delay and print out number
-        this.counter++; // Increment the counter
+        // Get quaternion of the head
+        const quaternion = [(Head.camera.quaternion.x), (Head.camera.quaternion.y),(Head.camera.quaternion.z) ,(Head.camera.quaternion.w) ];
+        const firstDerivatives = [];
+        for (let i = 0; i < quaternion.length; i++) {
+            firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;
+        }
 
-        // Only update the numbers every 10 frames
-        if (this.counter % 15 === 0) {
-            this.counter = 0;
+        const secondDerivatives = [];
+        for (let i = 0; i < quaternion.length; i++) {
+            secondDerivatives[i] = firstDerivatives[i] - this.$num[1][i].innerHTML;
+        }
+        const newMatrix = [
+            quaternion,
+            firstDerivatives,
+            secondDerivatives,
+        ];
 
-            // Get quaternion of the head
-            const x = (Head.fbx.quaternion.x)
-            const y = (Head.fbx.quaternion.y)
-            const z = (Head.fbx.quaternion.z)
-            const w = (Head.fbx.quaternion.w)
-            const quaternion = [(Head.fbx.quaternion.x), (Head.fbx.quaternion.y),(Head.fbx.quaternion.z) ,(Head.fbx.quaternion.w) ];
-            const firstDerivatives = [];
-            for (let i = 0; i < quaternion.length; i++) {
-                firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;
-            }
+        // Need an old matrix to calculate the first derivatives
 
-            const secondDerivatives = [];
-            for (let i = 0; i < quaternion.length; i++) {
-                secondDerivatives[i] = firstDerivatives[i] - this.$num[1][i].innerHTML;
-            }
-            const newMatrix = [
-                quaternion,
-                firstDerivatives,
-                secondDerivatives,
-            ];
-
-			// Need an old matrix to calculate the first derivatives
-
-            for (let i = 0; i < newMatrix.length; i++) {
-                for (let j = 0; j < newMatrix[i].length; j++) {
-                    this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(3);
-                }
+        for (let i = 0; i < newMatrix.length; i++) {
+            for (let j = 0; j < newMatrix[i].length; j++) {
+                this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(3);
             }
         }
     }
