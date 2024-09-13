@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {FBXLoader} from 'three/addons/loaders/FBXLoader.min.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.min.js';
-import * as dat from 'https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/+esm';
 
 const Renderer = {
     container: null,
@@ -19,23 +18,6 @@ const Renderer = {
 
         window.addEventListener('resize', () => {
             this.onResize();
-        });
-
-        this.controls = {
-            rotationX: 0,
-            rotationY: 0,
-            rotationZ: 0
-        };
-
-        const gui = new dat.GUI();
-        gui.add(this.controls, 'rotationX', 0, 360).onChange(value => {
-
-        });
-        gui.add(this.controls, 'rotationY', 0, 360).onChange(value => {
-
-        });
-        gui.add(this.controls, 'rotationZ', 0, 360).onChange(value => {
-
         });
     },
 
