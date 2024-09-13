@@ -26,19 +26,19 @@ const Renderer = {
 
         Head.onResize();
         Matrix.onResize();
-        Chart.onResize();
+        //Chart.onResize();
 
-        Circle.onResize();
-        Axis.onResize();
+        // Circle.onResize();
+        //Axis.onResize();
     },
 
     onAnimate: function () {
         Head.onAnimate();
         Matrix.onAnimate();
-        Chart.onAnimate();
+        //Chart.onAnimate();
 
-        Circle.onAnimate();
-        Axis.onAnimate();
+     //   Circle.onAnimate();
+       // Axis.onAnimate();
     },
 };
 
@@ -87,7 +87,7 @@ const Head = {
 
                 // Create wireframe geometry and material
                 const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
-                const wireframeMaterial = new THREE.LineBasicMaterial({color: 0xc24f04});
+                const wireframeMaterial = new THREE.LineBasicMaterial({color: 0xFFFFFF});
                 const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
 
                 // Add the wireframe as a child of the mesh
@@ -221,240 +221,242 @@ const Matrix = {
     }
 };
 
-const Chart = {
-    data: [],
-    chartScene: null,
-    chartCamera: null,
-    chartLine: null,
-    counter: 0,
-    display: true,
+// const Chart = {
+//     data: [],
+//     chartScene: null,
+//     chartCamera: null,
+//     chartLine: null,
+//     counter: 0,
+//     display: true,
 
-    init: function () {
+//     init: function () {
 
-        // Create chart scene
-        this.chartScene = new THREE.Scene();
-        this.chartCamera = new THREE.OrthographicCamera(0, 51, 51, 0, -1, 1); // Adjusted right and top parameters
+//         // Create chart scene
+//         this.chartScene = new THREE.Scene();
+//         this.chartCamera = new THREE.OrthographicCamera(0, 51, 51, 0, -1, 1); // Adjusted right and top parameters
 
-        // Initialize chart line
-        const chartMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
-        const chartGeometry = new THREE.BufferGeometry().setFromPoints([]);
+//         // Initialize chart line
+//         const chartMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
+//         const chartGeometry = new THREE.BufferGeometry().setFromPoints([]);
 
-        this.chartLine = new THREE.Line(chartGeometry, chartMaterial);
-        this.chartScene.add(this.chartLine);
+//         this.chartLine = new THREE.Line(chartGeometry, chartMaterial);
+//         this.chartScene.add(this.chartLine);
 
-        // Generate initial chart data
-        for (let i = 0; i < 50; i++) {
-            this.data.push({x: i, y: (Math.sin(i / 5)) * 15 + 25});
-        }
+//         // Generate initial chart data
+//         for (let i = 0; i < 50; i++) {
+//             this.data.push({x: i, y: (Math.sin(i / 5)) * 15 + 25});
+//         }
 
-        // Create X and Y axes
-        const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73}); // Yellow color for axes
+//         // Create X and Y axes
+//         const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73}); // Yellow color for axes
 
-        // X axis
-        const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(51, 1, 0)]);
-        const xAxis = new THREE.Line(xAxisGeometry, axesMaterial);
-        this.chartScene.add(xAxis);
+//         // X axis
+//         const xAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(51, 1, 0)]);
+//         const xAxis = new THREE.Line(xAxisGeometry, axesMaterial);
+//         this.chartScene.add(xAxis);
 
-        // Arrow for X axis
-        const xAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
-        xAxisArrow.position.set(50, 1, 0); // Adjusted x position
-        xAxisArrow.rotation.z = -Math.PI / 2;
-        this.chartScene.add(xAxisArrow);
+//         // Arrow for X axis
+//         const xAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
+//         xAxisArrow.position.set(50, 1, 0); // Adjusted x position
+//         xAxisArrow.rotation.z = -Math.PI / 2;
+//         this.chartScene.add(xAxisArrow);
 
-        // Y axis
-        const yAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(1, 51, 0)]);
-        const yAxis = new THREE.Line(yAxisGeometry, axesMaterial);
-        this.chartScene.add(yAxis);
+//         // Y axis
+//         const yAxisGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(1, 1, 0), new THREE.Vector3(1, 51, 0)]);
+//         const yAxis = new THREE.Line(yAxisGeometry, axesMaterial);
+//         this.chartScene.add(yAxis);
 
-        // Arrow for Y axis
-        const yAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
-        yAxisArrow.position.set(1, 50, 0); // Adjusted y position
-        this.chartScene.add(yAxisArrow);
+//         // Arrow for Y axis
+//         const yAxisArrow = new THREE.Mesh(new THREE.ConeGeometry(1, 2, 4), axesMaterial);
+//         yAxisArrow.position.set(1, 50, 0); // Adjusted y position
+//         this.chartScene.add(yAxisArrow);
 
-        this.onResize();
-    },
+//         this.onResize();
+//     },
 
-    onResize: function () {
-        this.display = window.innerWidth >= 480;
-    },
+//     onResize: function () {
+//         this.display = window.innerWidth >= 480;
+//     },
 
-    onAnimate: function () {
+//     onAnimate: function () {
 
-        if (!this.display) {
-            return;
-        }
+//         if (!this.display) {
+//             return;
+//         }
 
-        this.counter++; // Increment the counter
+//         this.counter++; // Increment the counter
 
-        // Only add a new data point every 2 frames - use to slow down the chart
-        if (this.counter % 2 === 0) {
-            this.counter = 0;
+//         // Only add a new data point every 2 frames - use to slow down the chart
+//         if (this.counter % 2 === 0) {
+//             this.counter = 0;
 
-            this.data.shift();
+//             this.data.shift();
 
-            //TODO: This should be the speed of rotation instead
-            let firstPoint = this.data[0];
-            let lastPoint = this.data[this.data.length - 1];
-            this.data.push({x: lastPoint.x + 1, y: (Math.sin((lastPoint.x + 1) / 5)) * 15 + 25});
+//             //TODO: This should be the speed of rotation instead
+//             let firstPoint = this.data[0];
+//             let lastPoint = this.data[this.data.length - 1];
+//             this.data.push({x: lastPoint.x + 1, y: (Math.sin((lastPoint.x + 1) / 5)) * 15 + 25});
 
-            const points = this.data.map(d => new THREE.Vector3(d.x - firstPoint.x + 1, d.y, 0));
-            this.chartLine.geometry.setFromPoints(points);
-        }
+//             const points = this.data.map(d => new THREE.Vector3(d.x - firstPoint.x + 1, d.y, 0));
+//             this.chartLine.geometry.setFromPoints(points);
+//         }
 
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        const chartWidth = container.clientWidth / 4;
-        const chartHeight = container.clientHeight / 4;
+//         const renderer = Renderer.renderer;
+//         const container = Renderer.container;
+//         const chartWidth = container.clientWidth / 4;
+//         const chartHeight = container.clientHeight / 4;
 
-        renderer.setViewport(0, 0, chartWidth, chartHeight);
-        renderer.setScissor(0, 0, chartWidth, chartHeight);
-        renderer.setScissorTest(true);
-        renderer.render(this.chartScene, this.chartCamera);
-    },
-};
+//         renderer.setViewport(0, 0, chartWidth, chartHeight);
+//         renderer.setScissor(0, 0, chartWidth, chartHeight);
+//         renderer.setScissorTest(true);
+//         renderer.render(this.chartScene, this.chartCamera);
+//     },
+// };
 
-const Circle = {
+// const Circle = {
 
-    $arcs: [],
-    $circles: [],
-    counter: 0,
+//     $arcs: [],
+//     $circles: [],
+//     counter: 0,
 
-    init: function () {
+//     init: function () {
 
-        for (let i = 0; i < 3; i++) {
-            let circle = document.createElement('div');
-            circle.classList.add('circle');
-            circle.innerHTML = '<svg viewBox="0 0 100 100">\n' +
-                '                <circle cx="50" cy="50" r="49" stroke="#E29E73" stroke-width="1" fill="transparent" />\n' +
-                '                <path fill="#E29E73" />\n' +
-                '            </svg>';
+//         for (let i = 0; i < 3; i++) {
+//             let circle = document.createElement('div');
+//             circle.classList.add('circle');
+//             circle.innerHTML = '<svg viewBox="0 0 100 100">\n' +
+//                 '                <circle cx="50" cy="50" r="49" stroke="#E29E73" stroke-width="1" fill="transparent" />\n' +
+//                 '                <path fill="#E29E73" />\n' +
+//                 '            </svg>';
 
-            Renderer.container.appendChild(circle);
+//             Renderer.container.appendChild(circle);
 
-            this.$circles[i] = circle;
-            this.$arcs[i] = circle.querySelector('path');
-        }
+//             this.$circles[i] = circle;
+//             this.$arcs[i] = circle.querySelector('path');
+//         }
 
-        // resize
-        this.onResize();
-    },
+//         // resize
+//         this.onResize();
+//     },
 
-    onResize: function () {
-        let clientHeight = Renderer.container.clientHeight;
+//     onResize: function () {
+//         let clientHeight = Renderer.container.clientHeight;
 
-        for (let i = 0; i < 3; i++) {
-            this.$circles[i].style.top = (clientHeight / 4) * i + 'px';
-        }
-    },
+//         for (let i = 0; i < 3; i++) {
+//             this.$circles[i].style.top = (clientHeight / 4) * i + 'px';
+//         }
+//     },
 
-    onAnimate: function () {
-        // Delay and get euler angles
-        this.counter++; // Increment the counter
-        if  (Head.fbx == null)
-            return;
+//     onAnimate: function () {
+//         // Delay and get euler angles
+//         this.counter++; // Increment the counter
+//         if  (Head.fbx == null)
+//             return;
 
-        // Only update the numbers every 2 frames
-        if (this.counter % 2 === 0) {
-            this.counter = 0;
-            // This is for euler_angles: yaw, pitch, roll
-            const current_euler_angles = [Head.fbx.rotation.x, Head.fbx.rotation.y, Head.fbx.rotation.z];
+//         // Only update the numbers every 2 frames
+//         if (this.counter % 2 === 0) {
+//             this.counter = 0;
+//             // This is for euler_angles: yaw, pitch, roll
+//             const current_euler_angles = [Head.fbx.rotation.x, Head.fbx.rotation.y, Head.fbx.rotation.z];
 
 
-            // Update the degree values and update the lines
-            for (let i = 0; i < 3; i++) {
-                this.$arcs[i].setAttribute('d', this.render(50, 50, 47, current_euler_angles[i]));
-            }
+//             // Update the degree values and update the lines
+//             for (let i = 0; i < 3; i++) {
+//                 this.$arcs[i].setAttribute('d', this.render(50, 50, 47, current_euler_angles[i]));
+//             }
 
-        }
-    },
+//         }
+//     },
 
-    radiantToCartesian: function (centerX, centerY, radius, radiant) {
-        return {
-            x: centerX + (radius * Math.cos(radiant)),
-            y: centerY + (radius * Math.sin(radiant))
-        };
-    },
+//     radiantToCartesian: function (centerX, centerY, radius, radiant) {
+//         return {
+//             x: centerX + (radius * Math.cos(radiant)),
+//             y: centerY + (radius * Math.sin(radiant))
+//         };
+//     },
 
-    render: function (x, y, radius, endAngle) {
-        const startAngle = 0; // Pie starts at 0 degrees
-        const end = this.radiantToCartesian(x, y, radius, endAngle);
-        const start = this.radiantToCartesian(x, y, radius, startAngle);
-        const largeArcFlag = endAngle <= 180 ? "0" : "1";
+//     render: function (x, y, radius, endAngle) {
+//         const startAngle = 0; // Pie starts at 0 degrees
+//         const end = this.radiantToCartesian(x, y, radius, endAngle);
+//         const start = this.radiantToCartesian(x, y, radius, startAngle);
+//         const largeArcFlag = endAngle <= 180 ? "0" : "1";
 
-        return [
-            "M", x, y, // Move to the center of the circle
-            "L", start.x, start.y, // Draw a line to the start of the arc
-            // https://www.nan.fyi/svg-paths/arcs
-             "A", radius, radius, 0, largeArcFlag, 1, end.x, end.y, // Draw the arc, 1 means clockwise
-            "Z" // Close the path back to the center
-        ].join(" ");
-    },
-};
+//         return [
+//             "M", x, y, // Move to the center of the circle
+//             "L", start.x, start.y, // Draw a line to the start of the arc
+//             // https://www.nan.fyi/svg-paths/arcs
+//              "A", radius, radius, 0, largeArcFlag, 1, end.x, end.y, // Draw the arc, 1 means clockwise
+//             "Z" // Close the path back to the center
+//         ].join(" ");
+//     },
+// };
 
-const Axis = {
-    axisScene: null,
-    axisCamera: null,
-    display: true,
 
-    init: function () {
-        // Create axis scene
-        this.axisScene = new THREE.Scene();
-        this.axisCamera = new THREE.PerspectiveCamera(75, Renderer.container.clientWidth / Renderer.container.clientHeight, 0.1, 1000);
-        this.axisCamera.position.set(9, 9, 9); // Adjust the camera position
-        this.axisCamera.lookAt(0, 0, 0); // Make the camera look at the origin
 
-        // Create an AxesHelper and add it to the scene
-        const axesHelper = new THREE.AxesHelper(7); // Reduce the size of the axes
-        const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
-        const axes = new THREE.LineSegments(axesHelper.geometry, axesMaterial);
-        this.axisScene.add(axes);
+// const Axis = {
+//     axisScene: null,
+//     axisCamera: null,
+//     display: true,
 
-        // Create ArrowHelpers for each axis
-        const arrowSize = 1.4; // Reduce the size of the arrows
-        const arrowDir = new THREE.Vector3(1, 0, 0);
-        const arrowOrigin = new THREE.Vector3(7, 0, 0); // Adjust the origin of the arrows
-        const arrowHelperX = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
-        this.axisScene.add(arrowHelperX);
+//     init: function () {
+//         // Create axis scene
+//         this.axisScene = new THREE.Scene();
+//         this.axisCamera = new THREE.PerspectiveCamera(75, Renderer.container.clientWidth / Renderer.container.clientHeight, 0.1, 1000);
+//         this.axisCamera.position.set(9, 9, 9); // Adjust the camera position
+//         this.axisCamera.lookAt(0, 0, 0); // Make the camera look at the origin
 
-        arrowDir.set(0, 1, 0);
-        arrowOrigin.set(0, 7, 0);
-        const arrowHelperY = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
-        this.axisScene.add(arrowHelperY);
+//         // Create an AxesHelper and add it to the scene
+//         const axesHelper = new THREE.AxesHelper(7); // Reduce the size of the axes
+//         const axesMaterial = new THREE.LineBasicMaterial({color: 0xE29E73});
+//         const axes = new THREE.LineSegments(axesHelper.geometry, axesMaterial);
+//         this.axisScene.add(axes);
 
-        arrowDir.set(0, 0, 1);
-        arrowOrigin.set(0, 0, 7);
-        const arrowHelperZ = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
-        this.axisScene.add(arrowHelperZ);
+//         // Create ArrowHelpers for each axis
+//         const arrowSize = 1.4; // Reduce the size of the arrows
+//         const arrowDir = new THREE.Vector3(1, 0, 0);
+//         const arrowOrigin = new THREE.Vector3(7, 0, 0); // Adjust the origin of the arrows
+//         const arrowHelperX = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+//         this.axisScene.add(arrowHelperX);
 
-        this.onResize();
-    },
+//         arrowDir.set(0, 1, 0);
+//         arrowOrigin.set(0, 7, 0);
+//         const arrowHelperY = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+//         this.axisScene.add(arrowHelperY);
 
-    onResize: function () {
-        this.axisCamera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
-        this.axisCamera.updateProjectionMatrix();
+//         arrowDir.set(0, 0, 1);
+//         arrowOrigin.set(0, 0, 7);
+//         const arrowHelperZ = new THREE.ArrowHelper(arrowDir, arrowOrigin, arrowSize, 0xE29E73);
+//         this.axisScene.add(arrowHelperZ);
 
-        this.display = window.innerWidth >= 480;
-    },
+//         this.onResize();
+//     },
 
-    onAnimate: function () {
+//     onResize: function () {
+//         this.axisCamera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
+//         this.axisCamera.updateProjectionMatrix();
 
-        if (!Head.fbx || !this.display) {
-            return;
-        }
+//         this.display = window.innerWidth >= 480;
+//     },
 
-        this.axisScene.rotation.copy(Head.fbx.rotation);
+//     onAnimate: function () {
 
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        const axisWidth = container.clientWidth / 4;
-        const axisHeight = container.clientHeight / 4;
+//         if (!Head.fbx || !this.display) {
+//             return;
+//         }
 
-        renderer.setViewport(3 * axisWidth, 0, axisWidth, axisHeight);
-        renderer.setScissor(3 * axisWidth, 0, axisWidth, axisHeight);
-        renderer.setScissorTest(true);
-        renderer.render(this.axisScene, this.axisCamera);
-    },
-};
+//         this.axisScene.rotation.copy(Head.fbx.rotation);
+
+//         const renderer = Renderer.renderer;
+//         const container = Renderer.container;
+//         const axisWidth = container.clientWidth / 4;
+//         const axisHeight = container.clientHeight / 4;
+
+//         renderer.setViewport(3 * axisWidth, 0, axisWidth, axisHeight);
+//         renderer.setScissor(3 * axisWidth, 0, axisWidth, axisHeight);
+//         renderer.setScissorTest(true);
+//         renderer.render(this.axisScene, this.axisCamera);
+//     },
+// };
 
 
 (function () {
@@ -469,9 +471,9 @@ const Axis = {
     Head.init();
 
     Matrix.init();
-    Chart.init();
+    //Chart.init();
 
-    Circle.init();
-    Axis.init();
+   // Circle.init();
+    //Axis.init();
 
 })();
