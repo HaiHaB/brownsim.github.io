@@ -70,6 +70,7 @@ const Head = {
 
         this.controls.enableZoom = false; // to disable zoom
         this.controls.enablePan = false; // to disable panning
+        this.controls.autoRotate = true; // to disable panning
 
         // //@Todo Add axis helper, but better to remove it
         // const axesHelper = new THREE.AxesHelper(17);
@@ -122,7 +123,7 @@ const Head = {
 
         if (this.fbx === null) return;
 
-        this.fbx.rotateY(0.003);
+        //this.fbx.rotateY(0.003);
 
         // Auto-rotate camera
         this.controls.update();
@@ -193,11 +194,11 @@ const Matrix = {
             this.counter = 0;
 
             // Get quaternion of the head
-            const x = (Head.fbx.quaternion.x)
-            const y = (Head.fbx.quaternion.y)
-            const z = (Head.fbx.quaternion.z)
-            const w = (Head.fbx.quaternion.w)
-            const quaternion = [(Head.fbx.quaternion.x), (Head.fbx.quaternion.y),(Head.fbx.quaternion.z) ,(Head.fbx.quaternion.w) ];
+            const x = (Head.camera.quaternion.x)
+            const y = (Head.camera.quaternion.y)
+            const z = (Head.camera.quaternion.z)
+            const w = (Head.camera.quaternion.w)
+            const quaternion = [(Head.camera.quaternion.x), (Head.camera.quaternion.y),(Head.camera.quaternion.z) ,(Head.camera.quaternion.w) ];
             const firstDerivatives = [];
             for (let i = 0; i < quaternion.length; i++) {
                 firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;

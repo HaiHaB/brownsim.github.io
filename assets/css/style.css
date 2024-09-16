@@ -162,8 +162,8 @@ a {
 
 .matrix-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 120px;
+  left: -150px;
 }
 
 .matrix {
@@ -2325,6 +2325,11 @@ a {
 
   .careers .frame-7 {
     margin-top: 24px;
+  }
+
+  #avatar-container {
+    width: calc(100% - 150px);
+    margin-left: 150px;
   }
 }
 
