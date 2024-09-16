@@ -181,6 +181,9 @@ const Matrix = {
     },
 
     onAnimate: function () {
+        if (!Head.fbx) {
+            return;
+        }
 
         // Delay and print out number
         this.counter++; // Increment the counter
@@ -210,7 +213,7 @@ const Matrix = {
                 secondDerivatives,
             ];
 
-			// Need an old matrix to calculate the first derivatives
+            // Need an old matrix to calculate the first derivatives
 
             for (let i = 0; i < newMatrix.length; i++) {
                 for (let j = 0; j < newMatrix[i].length; j++) {
