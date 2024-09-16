@@ -146,7 +146,7 @@ const Matrix = {
         let container = document.createElement('div');
         container.classList.add('matrix-container');
 
-        const matrixName = ["q", ".", ".."];
+        const matrixName = ["Q", "Q̇", "Q̈"];
         for (let i = 0; i < 3; i++) {
             let matrix = document.createElement('div');
             matrix.classList.add('matrix');
