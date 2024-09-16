@@ -146,7 +146,7 @@ const Matrix = {
         let container = document.createElement('div');
         container.classList.add('matrix-container');
 
-        const matrixName = ["Q", "Q̇", "Q̈"];
+        const matrixName = ["q", "q̇", "q̈"];
         for (let i = 0; i < 3; i++) {
             let matrix = document.createElement('div');
             matrix.classList.add('matrix');
@@ -214,7 +214,7 @@ const Matrix = {
 
             for (let i = 0; i < newMatrix.length; i++) {
                 for (let j = 0; j < newMatrix[i].length; j++) {
-                    this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(3);
+                    this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(4);
                 }
             }
         }
