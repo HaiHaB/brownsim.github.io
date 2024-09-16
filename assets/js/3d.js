@@ -67,16 +67,17 @@ const Head = {
 
         // Add OrbitControls for better interaction
         this.controls = new OrbitControls(this.camera, Renderer.renderer.domElement);
+        this.controls.autoRotate = true; // set the autoRotate property to true
+        this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
 
         this.controls.enableZoom = false; // to disable zoom
         this.controls.enablePan = false; // to disable panning
-        this.controls.autoRotate = true; // to disable panning
 
-        // //@Todo Add axis helper, but better to remove it
-        // const axesHelper = new THREE.AxesHelper(17);
+        //@Todo Add axis helper, but better to remove it
+        const axesHelper = new THREE.AxesHelper(17);
         // // red, yellow, blue
         // axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
-        // this.scene.add(axesHelper)
+        this.scene.add(axesHelper)
 
         // Load avatar
         fbx.traverse(function (child) {
@@ -194,11 +195,7 @@ const Matrix = {
             this.counter = 0;
 
             // Get quaternion of the head
-            const x = (Head.camera.quaternion.x)
-            const y = (Head.camera.quaternion.y)
-            const z = (Head.camera.quaternion.z)
-            const w = (Head.camera.quaternion.w)
-            const quaternion = [(Head.camera.quaternion.x), (Head.camera.quaternion.y),(Head.camera.quaternion.z) ,(Head.camera.quaternion.w) ];
+            const quaternion = [(Head.camera.quaternion.x), (Head.camera.quaternion.y), (Head.camera.quaternion.z), (Head.camera.quaternion.w) ];
             const firstDerivatives = [];
             for (let i = 0; i < quaternion.length; i++) {
                 firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;
