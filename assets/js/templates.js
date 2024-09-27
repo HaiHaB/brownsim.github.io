@@ -134,7 +134,7 @@ class Footer extends HTMLElement {
                                 <img class="line" src="assets/img/vertical-line.svg" alt="vertical line"/>
                                 <div class="text-small"><a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=33799b21-62d2-4d4c-94d8-2627fb48e5e3">Cookie Policy</a></div>
                                 <img class="line" src="assets/img/vertical-line.svg" alt="vertical line"/>
-                                <div class="text-small">Powered by BrownSim Ltd</a></div>
+                                <div class="text-small">Powered by BrownSim Ltd</div>
                             </div>
                         </div>
                         <p class="text-small">
