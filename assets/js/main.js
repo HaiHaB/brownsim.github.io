@@ -2,7 +2,7 @@
   new cookieNoticeJS({
     // Localizations of the notice message
     messageLocales: {
-      en: "We use anonymous cookies on this website to monitor and improve upon site performance.<br/> By continuing to use our site you agree to this use. You can learn more and remove these cookies at any point via our",
+      en: "We use anonymous cookies on this website to monitor and improve upon site performance.<br/> By continuing to use our site you agree to this use. For more information, please review our",
     },
 
     // Localizations of the dismiss button text
@@ -22,7 +22,7 @@
 
     // Text for optional learn more button
     learnMoreLinkText: {
-      en: "cookie page",
+      en: "Cookie policy",
     },
 
     // The message will be shown again in X days
@@ -45,6 +45,7 @@
   });
 
   const note = document.querySelector("#cookieNotice");
+
   if (note) {
     note.style.fontFamily = "";
     note.style.lineHeight = "";
