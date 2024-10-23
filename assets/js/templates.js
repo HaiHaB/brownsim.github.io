@@ -255,8 +255,12 @@ class MobileHeader extends HTMLElement {
     <div class="container-fluid mobile-menu">
     <div class="row justify-content-between">
         <div class="col-8">
-            <img class="mobile-logo" src="assets/img/logo.svg" alt="BrownSim logo"/>
+            <a class="mobile-logo" href="index.html" title="BrownSim logo">
+                <img src="assets/img/logo.svg" alt="BrownSim logo"/>
+            </a>
         </div>
+
+
 
         <div class="col-auto nav-container">
             <span class="hamburger-lines menu-dropdown-btn"

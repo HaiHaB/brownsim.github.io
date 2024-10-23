@@ -2449,22 +2449,13 @@ input[type=text] {
   background-color: transparent;
   font-family: var(--headline-h6-font-family);
   font-weight: var(--headline-h6-font-weight);
+  font-size: var(--paragraph-medium-link-font-size);
 }
 
-.resources a:visited {
-  text-decoration: none;
-  background-color: transparent;
-  color: #ffd053;
-}
 .resources a:hover {
   text-decoration: none;
   background-color: transparent;
   color: #ffffff;
-}
-.resources a:active {
-  text-decoration: none;
-  background-color: transparent;
-  color: #ffd053;
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -2474,6 +2465,7 @@ input[type=text] {
   color: #ffd053;
   font-family: var(--headline-h6-font-family);
   font-weight: var(--headline-h6-font-weight);
+  font-size: var(--paragraph-medium-link-font-size);
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
