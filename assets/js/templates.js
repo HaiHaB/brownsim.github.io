@@ -150,8 +150,7 @@ class Footer extends HTMLElement {
   }
 }
 
-customElements.define('footer-component', Footer);
-
+customElements.define("footer-component", Footer);
 
 class MobileHeader extends HTMLElement {
   constructor() {
@@ -287,8 +286,7 @@ class MobileHeader extends HTMLElement {
   }
 }
 
-customElements.define('mobile-header-component', MobileHeader);
-
+customElements.define("mobile-header-component", MobileHeader);
 
 /// Note: The header component only work in index page because there is no page highlight required
 
@@ -296,7 +294,6 @@ customElements.define('mobile-header-component', MobileHeader);
 class Header extends HTMLElement {
   constructor() {
     super();
-
   }
 
   connectedCallback() {
@@ -378,8 +375,7 @@ class Header extends HTMLElement {
   }
 }
 
-customElements.define('header-component', Header);
-
+customElements.define("header-component", Header);
 
 // class RequestTrial extends HTMLElement {
 //   constructor() {
@@ -461,7 +457,6 @@ customElements.define('header-component', Header);
 //             line-height: var(--paragraph-medium-bold-line-height);
 //         }
 
-
 //         .home .text-wrapper-3 {
 //             position: relative;
 //             width: fit-content;
@@ -503,7 +498,6 @@ customElements.define('header-component', Header);
 //         }
 
 //     </style>
-
 
 //     <div class="col-md-6 frame-16">
 //         <img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo"/>

@@ -1,225 +1,245 @@
-import * as THREE from 'three';
-import {FBXLoader} from 'three/addons/loaders/FBXLoader.min.js';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.min.js';
+import * as THREE from "three";
+import { FBXLoader } from "three/addons/loaders/FBXLoader.min.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.min.js";
 
 const Renderer = {
-    container: null,
-    renderer: null,
+  container: null,
+  renderer: null,
 
-    init: function () {
-        this.container = document.getElementById('avatar-container');
-        this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+  init: function () {
+    this.container = document.getElementById("avatar-container");
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-        this.renderer.setPixelRatio(window.devicePixelRatio);
-        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-        this.renderer.setAnimationLoop(this.onAnimate);
-        this.container.appendChild(this.renderer.domElement);
-        this.renderer.shadowMap.enabled = true;
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
+    this.renderer.setAnimationLoop(this.onAnimate);
+    this.container.appendChild(this.renderer.domElement);
+    this.renderer.shadowMap.enabled = true;
 
-        window.addEventListener('resize', () => {
-            this.onResize();
-        });
-    },
+    window.addEventListener("resize", () => {
+      this.onResize();
+    });
+  },
 
-    onResize: function () {
-        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+  onResize: function () {
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
 
-        Head.onResize();
-        Matrix.onResize();
-        //Chart.onResize();
+    Head.onResize();
+    Matrix.onResize();
+    //Chart.onResize();
 
-        // Circle.onResize();
-        //Axis.onResize();
-    },
+    // Circle.onResize();
+    //Axis.onResize();
+  },
 
-    onAnimate: function () {
-        Head.onAnimate();
-        Matrix.onAnimate();
-        //Chart.onAnimate();
+  onAnimate: function () {
+    Head.onAnimate();
+    Matrix.onAnimate();
+    //Chart.onAnimate();
 
-     //   Circle.onAnimate();
-       // Axis.onAnimate();
-    },
+    //   Circle.onAnimate();
+    // Axis.onAnimate();
+  },
 };
 
 const Head = {
-    camera: null,
-    scene: null,
-    fbx: null,
-    controls: null,
+  camera: null,
+  scene: null,
+  fbx: null,
+  controls: null,
 
-    init: function () {
-        (new FBXLoader()).load('./assets/3d/humanhead.fbx', (fbx) => {
-            this.ready(fbx);
+  init: function () {
+    new FBXLoader().load("./assets/3d/humanhead.fbx", (fbx) => {
+      this.ready(fbx);
+    });
+  },
+
+  ready: function (fbx) {
+    const container = Renderer.container;
+
+    // Camera setup
+    this.camera = new THREE.PerspectiveCamera(
+      45,
+      container.clientWidth / container.clientHeight,
+      1,
+      2000
+    );
+    this.camera.position.set(0, 0, 60);
+
+    // Scene setup
+    this.scene = new THREE.Scene();
+
+    // Add OrbitControls for better interaction
+    this.controls = new OrbitControls(
+      this.camera,
+      Renderer.renderer.domElement
+    );
+    this.controls.autoRotate = true; // set the autoRotate property to true
+    this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
+
+    this.controls.enableZoom = false; // to disable zoom
+    this.controls.enablePan = false; // to disable panning
+
+    //@Todo Add axis helper, but better to remove it
+    const axesHelper = new THREE.AxesHelper(17);
+    // // red, yellow, blue
+    // axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
+    this.scene.add(axesHelper);
+
+    // Load avatar
+    fbx.traverse(function (child) {
+      if (child.isMesh) {
+        // Original material
+        child.material = new THREE.MeshStandardMaterial({
+          side: THREE.FrontSide,
         });
-    },
 
-    ready: function (fbx) {
-
-        const container = Renderer.container;
-
-        // Camera setup
-        this.camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 2000);
-        this.camera.position.set(0, 0, 60);
-
-        // Scene setup
-        this.scene = new THREE.Scene();
-
-        // Add OrbitControls for better interaction
-        this.controls = new OrbitControls(this.camera, Renderer.renderer.domElement);
-        this.controls.autoRotate = true; // set the autoRotate property to true
-        this.controls.autoRotateSpeed = 1; // adjust the speed of rotation
-
-        this.controls.enableZoom = false; // to disable zoom
-        this.controls.enablePan = false; // to disable panning
-
-        //@Todo Add axis helper, but better to remove it
-        const axesHelper = new THREE.AxesHelper(17);
-        // // red, yellow, blue
-        // axesHelper.setColors ( 0xFF0000, 0xFFFF00, 0x0000FF)
-        this.scene.add(axesHelper)
-
-        // Load avatar
-        fbx.traverse(function (child) {
-            if (child.isMesh) {
-                // Original material
-                child.material = new THREE.MeshStandardMaterial({
-                    side: THREE.FrontSide,
-                });
-
-                // Create wireframe geometry and material
-                const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
-                const wireframeMaterial = new THREE.LineBasicMaterial({color: 0xFFFFFF});
-                const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
-
-                // Add the wireframe as a child of the mesh
-                child.add(wireframe);
-            }
-
+        // Create wireframe geometry and material
+        const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
+        const wireframeMaterial = new THREE.LineBasicMaterial({
+          color: 0xffffff,
         });
-        this.scene.add(fbx);
+        const wireframe = new THREE.LineSegments(
+          wireframeGeometry,
+          wireframeMaterial
+        );
 
-        // Adjust the model scale and position if necessary
-        fbx.position.set(0, 0, 0); // Center the object
+        // Add the wireframe as a child of the mesh
+        child.add(wireframe);
+      }
+    });
+    this.scene.add(fbx);
 
-        // Compute the bounding box to center the model
-        const box = new THREE.Box3().setFromObject(fbx);
-        const center = box.getCenter(new THREE.Vector3());
-        fbx.position.sub(center);
+    // Adjust the model scale and position if necessary
+    fbx.position.set(0, 0, 0); // Center the object
 
-        this.scene.add(fbx);
+    // Compute the bounding box to center the model
+    const box = new THREE.Box3().setFromObject(fbx);
+    const center = box.getCenter(new THREE.Vector3());
+    fbx.position.sub(center);
 
-        this.fbx = fbx;
+    this.scene.add(fbx);
 
-        this.axis = new THREE.Vector3(0, 0, 0).normalize();
-        this.speed = 1;
-    },
+    this.fbx = fbx;
 
-    onResize: function () {
-        this.camera.aspect = Renderer.container.clientWidth / Renderer.container.clientHeight;
-        this.camera.updateProjectionMatrix();
-    },
+    this.axis = new THREE.Vector3(0, 0, 0).normalize();
+    this.speed = 1;
+  },
 
-    onAnimate: function () {
+  onResize: function () {
+    this.camera.aspect =
+      Renderer.container.clientWidth / Renderer.container.clientHeight;
+    this.camera.updateProjectionMatrix();
+  },
 
-        if (this.fbx === null) return;
+  onAnimate: function () {
+    if (this.fbx === null) return;
 
-        //this.fbx.rotateY(0.003);
+    //this.fbx.rotateY(0.003);
 
-        // Auto-rotate camera
-        this.controls.update();
+    // Auto-rotate camera
+    this.controls.update();
 
-        const renderer = Renderer.renderer;
-        const container = Renderer.container;
-        renderer.setViewport(0, 0, container.clientWidth, container.clientHeight);
-        renderer.setScissor(0, 0, container.clientWidth, container.clientHeight);
-        renderer.setScissorTest(true);
-        renderer.render(this.scene, this.camera);
-    }
+    const renderer = Renderer.renderer;
+    const container = Renderer.container;
+    renderer.setViewport(0, 0, container.clientWidth, container.clientHeight);
+    renderer.setScissor(0, 0, container.clientWidth, container.clientHeight);
+    renderer.setScissorTest(true);
+    renderer.render(this.scene, this.camera);
+  },
 };
 
 const Matrix = {
-    counter: 0,
-    $num: [],
-    $matrixes: [],
+  counter: 0,
+  $num: [],
+  $matrixes: [],
 
-    init: function () {
+  init: function () {
+    let container = document.createElement("div");
+    container.classList.add("matrix-container");
 
-        let container = document.createElement('div');
-        container.classList.add('matrix-container');
+    const matrixName = ["q", "q̇", "q̈"];
+    for (let i = 0; i < 3; i++) {
+      let matrix = document.createElement("div");
+      matrix.classList.add("matrix");
+      matrix.innerHTML =
+        '<span class="matrix-text">' +
+        matrixName[i] +
+        "</span>" +
+        '<span class="matrix-line top-left"></span>' +
+        '<span class="matrix-line top-right"></span>' +
+        '<span class="matrix-line bottom-left"></span>' +
+        '<span class="matrix-line bottom-right"></span>' +
+        '<div class="num">0.0000</div>' +
+        '<div class="num">0.0000</div>' +
+        '<div class="num">0.0000</div>' +
+        '<div class="num">0.0000</div>';
 
-        const matrixName = ["q", "q̇", "q̈"];
-        for (let i = 0; i < 3; i++) {
-            let matrix = document.createElement('div');
-            matrix.classList.add('matrix');
-            matrix.innerHTML = '<span class="matrix-text">' + matrixName[i] + '</span>' +
-                '<span class="matrix-line top-left"></span>' +
-                '<span class="matrix-line top-right"></span>' +
-                '<span class="matrix-line bottom-left"></span>' +
-                '<span class="matrix-line bottom-right"></span>' +
-                '<div class="num">0.0000</div>' +
-                '<div class="num">0.0000</div>' +
-                '<div class="num">0.0000</div>' +
-                '<div class="num">0.0000</div>';
+      container.appendChild(matrix);
 
-            container.appendChild(matrix);
-
-            this.$matrixes[i] = matrix;
-            this.$num[i] = matrix.querySelectorAll('.num');
-        }
-
-        Renderer.container.appendChild(container);
-
-        // resize
-        this.onResize();
-    },
-
-    onResize: function () {
-        let clientHeight = Renderer.container.clientHeight;
-
-        for (let i = 0; i < 3; i++) {
-            this.$matrixes[i].style.top = (clientHeight / 4) * i + 'px';
-        }
-    },
-
-    onAnimate: function () {
-        if (!Head.fbx) {
-            return;
-        }
-
-        // Delay and print out number
-        this.counter++; // Increment the counter
-
-        // Only update the numbers every 10 frames
-        if (this.counter % 15 === 0) {
-            this.counter = 0;
-
-            // Get quaternion of the head
-            const quaternion = [(Head.camera.quaternion.x), (Head.camera.quaternion.y), (Head.camera.quaternion.z), (Head.camera.quaternion.w) ];
-            const firstDerivatives = [];
-            for (let i = 0; i < quaternion.length; i++) {
-                firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;
-            }
-
-            const secondDerivatives = [];
-            for (let i = 0; i < quaternion.length; i++) {
-                secondDerivatives[i] = firstDerivatives[i] - this.$num[1][i].innerHTML;
-            }
-            const newMatrix = [
-                quaternion,
-                firstDerivatives,
-                secondDerivatives,
-            ];
-
-            // Need an old matrix to calculate the first derivatives
-
-            for (let i = 0; i < newMatrix.length; i++) {
-                for (let j = 0; j < newMatrix[i].length; j++) {
-                    this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(4);
-                }
-            }
-        }
+      this.$matrixes[i] = matrix;
+      this.$num[i] = matrix.querySelectorAll(".num");
     }
+
+    Renderer.container.appendChild(container);
+
+    // resize
+    this.onResize();
+  },
+
+  onResize: function () {
+    let clientHeight = Renderer.container.clientHeight;
+
+    for (let i = 0; i < 3; i++) {
+      this.$matrixes[i].style.top = (clientHeight / 4) * i + "px";
+    }
+  },
+
+  onAnimate: function () {
+    if (!Head.fbx) {
+      return;
+    }
+
+    // Delay and print out number
+    this.counter++; // Increment the counter
+
+    // Only update the numbers every 10 frames
+    if (this.counter % 15 === 0) {
+      this.counter = 0;
+
+      // Get quaternion of the head
+      const quaternion = [
+        Head.camera.quaternion.x,
+        Head.camera.quaternion.y,
+        Head.camera.quaternion.z,
+        Head.camera.quaternion.w,
+      ];
+      const firstDerivatives = [];
+      for (let i = 0; i < quaternion.length; i++) {
+        firstDerivatives[i] = quaternion[i] - this.$num[0][i].innerHTML;
+      }
+
+      const secondDerivatives = [];
+      for (let i = 0; i < quaternion.length; i++) {
+        secondDerivatives[i] = firstDerivatives[i] - this.$num[1][i].innerHTML;
+      }
+      const newMatrix = [quaternion, firstDerivatives, secondDerivatives];
+
+      // Need an old matrix to calculate the first derivatives
+
+      for (let i = 0; i < newMatrix.length; i++) {
+        for (let j = 0; j < newMatrix[i].length; j++) {
+          this.$num[i][j].innerHTML = newMatrix[i][j].toFixed(4);
+        }
+      }
+    }
+  },
 };
 
 // const Chart = {
@@ -360,7 +380,6 @@ const Matrix = {
 //             // This is for euler_angles: yaw, pitch, roll
 //             const current_euler_angles = [Head.fbx.rotation.x, Head.fbx.rotation.y, Head.fbx.rotation.z];
 
-
 //             // Update the degree values and update the lines
 //             for (let i = 0; i < 3; i++) {
 //                 this.$arcs[i].setAttribute('d', this.render(50, 50, 47, current_euler_angles[i]));
@@ -391,8 +410,6 @@ const Matrix = {
 //         ].join(" ");
 //     },
 // };
-
-
 
 // const Axis = {
 //     axisScene: null,
@@ -459,22 +476,19 @@ const Matrix = {
 //     },
 // };
 
-
 (function () {
+  // Check if the avatar container exists
+  if (!document.getElementById("avatar-container")) {
+    return;
+  }
 
-    // Check if the avatar container exists
-    if (!document.getElementById('avatar-container')) {
-        return;
-    }
+  Renderer.init();
 
-    Renderer.init();
+  Head.init();
 
-    Head.init();
+  Matrix.init();
+  //Chart.init();
 
-    Matrix.init();
-    //Chart.init();
-
-   // Circle.init();
-    //Axis.init();
-
+  // Circle.init();
+  //Axis.init();
 })();
