@@ -2447,6 +2447,8 @@ input[type=text] {
   text-decoration: none;
   color: #ffd053;
   background-color: transparent;
+  font-family: var(--headline-h6-font-family);
+  font-weight: var(--headline-h6-font-weight);
 }
 
 .resources a:visited {
@@ -2470,6 +2472,8 @@ input[type=text] {
   border:none;
   background-color: transparent;
   color: #ffd053;
+  font-family: var(--headline-h6-font-family);
+  font-weight: var(--headline-h6-font-weight);
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -2485,15 +2489,19 @@ input[type=text] {
   font-style: italic;
   text-align: justify;
   text-justify: inter-word;
+  font-family: var(--paragraph-medium-regular-font-family);
+  font-size: var(--paragraph-medium-regular-font-size);
 }
 
 .resources .article-name {
-  font-weight: bold;
   font-size: 1.2em;
+  font-family: var(--paragraph-medium-regular-font-family);
+  font-weight: var(--headline-h6-font-weight);
 }
 
 .resources .article-journal {
   font-style: italic;
+  font-family: var(--paragraph-medium-regular-font-family);
   font-size: 0.9em;
 }
 
