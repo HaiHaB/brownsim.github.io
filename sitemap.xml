@@ -8,28 +8,43 @@
 
 
 <url>
-  <loc>https://brownsim.io/</loc>
-  <lastmod>2024-09-04T08:20:05+00:00</lastmod>
+  <loc>https://www.brownsim.io/</loc>
+  <lastmod>2024-09-18T05:07:06+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://brownsim.io/procue.html</loc>
-  <lastmod>2024-09-04T08:20:05+00:00</lastmod>
+  <loc>https://www.brownsim.io/index.html</loc>
+  <lastmod>2024-09-18T05:07:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://brownsim.io/leadership.html</loc>
-  <lastmod>2024-09-04T08:20:05+00:00</lastmod>
+  <loc>https://www.brownsim.io/EULA.html</loc>
+  <lastmod>2024-10-23T09:37:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://brownsim.io/services.html</loc>
-  <lastmod>2024-09-04T08:20:05+00:00</lastmod>
+  <loc>https://www.brownsim.io/procue.html</loc>
+  <lastmod>2024-10-23T09:37:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://brownsim.io/careers.html</loc>
-  <lastmod>2024-09-02T12:07:45+00:00</lastmod>
+  <loc>https://www.brownsim.io/leadership.html</loc>
+  <lastmod>2024-10-23T10:59:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.brownsim.io/services.html</loc>
+  <lastmod>2024-10-23T10:59:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.brownsim.io/careers.html</loc>
+  <lastmod>2024-10-23T10:59:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.brownsim.io/resources.html</loc>
+  <lastmod>2024-10-23T11:11:21+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
