@@ -888,16 +888,17 @@ a {
   line-height: var(--paragraph-medium-bold-line-height);
 }
 
-input[type="text"] {
+.text-box {
   position: relative;
-  flex: 1;
-  width: 50%;
+  display: inline-flex;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid #2c3317;
-  border-radius: 4px;
+  border: 2px solid #33171c;
+  border-radius: 6px;
 }
+
 .btn-full {
   width: 100%;
 }
@@ -2520,6 +2521,8 @@ input[type="text"] {
   font-style: var(--paragraph-medium-regular-font-style);
   text-align: center;
 }
+
+
 
 /* ======== resources =========*/
 
