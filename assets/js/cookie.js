@@ -30,7 +30,7 @@
 
     learnMoreLinkEnabled: false,
 
-    learnMoreLinkHref: "/cookie-banner-information.html",
+    learnMoreLinkHref: "/cookie-banner-information",
 
     learnMoreLinkText: {
       it: "Saperne di più",

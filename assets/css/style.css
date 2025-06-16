@@ -631,6 +631,12 @@ a {
   line-height: var(--paragraph-medium-bold-line-height);
   font-style: var(--paragraph-medium-bold-font-style);
   text-decoration: none;
+  transition: 0.8s;
+}
+
+/* To brighten the text when hovering */
+.menu-link:hover {
+  filter: brightness(200%);
 }
 
 .home .frame-15 {
