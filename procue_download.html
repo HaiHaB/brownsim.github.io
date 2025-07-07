@@ -81,8 +81,6 @@
                         <select name="version-artifacts" id="version" class="version-box">
                         <option value="88d4340e-1be4-497a-8c97-006f66a49d77/cb0c4255-269a-4bb7-9e08-24c5c3659bac">1.1.6</option>
                         <option value="342788d8-9b8a-48a9-a4d0-28e087176ada/6a4517eb-f7ab-463d-ac53-977757d46736">1.1.5</option>
-                        <option value="4b1ff15e-9d79-4952-91b0-ac5fe2c28bc0/0ff2627f-43ae-4953-98b9-4a7673cd53da">1.1.4</option>
-                        <option value="8dcaf364-24f7-45c4-a664-7bce324cfb9a/aca55e25-d914-4043-9172-807184ee207a">1.1.3</option>
                     </select>
                     <br><br>
 
@@ -98,11 +96,11 @@
                     <script>
                         function myFunction() {
                             userKey = document.getElementById("userKey").value;
-                            // version = "88d4340e-1be4-497a-8c97-006f66a49d77"
                             version = document.getElementById("version").value;
+                            accounts = "21fb0e38-8a9e-445a-94dc-e5e8621672fd/"
                             document.getElementById("demo").innerHTML = '<br><div class="text-h3">Thank you for downloading ProCue</div>' +
                                 '<br><p>Your download should start automatically. If you have "Unauthorise" error, please check your user key or contact us at support@brownsim.io</p>    '
-                            window.location.href = "https://get.keygen.sh/21fb0e38-8a9e-445a-94dc-e5e8621672fd/" + version + "?auth=license:" + userKey;
+                            window.location.href = "https://get.keygen.sh/" + accounts + version + "?auth=license:" + userKey;
                         }
                     </script>
                 </div>
