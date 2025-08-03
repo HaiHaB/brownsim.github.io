@@ -884,7 +884,7 @@ a {
   position: relative;
   flex: 1;
   text-align: center;
-  color: #2c3317;
+  color: #fafafa;
   font-family: var(--paragraph-medium-bold-font-family), serif;
   font-weight: var(--paragraph-medium-bold-font-weight);
   font-style: var(--paragraph-medium-bold-font-style);
