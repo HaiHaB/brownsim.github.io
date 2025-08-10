@@ -1,5 +1,5 @@
 body {
-  color: #f1cfb9;
+  color: #f8f8f8;
   align-self: stretch;
   font-family: var(--paragraph-medium-regular-font-family), serif;
   font-style: var(--paragraph-medium-regular-font-style);
@@ -15,7 +15,7 @@ p {
 
 a {
   text-decoration: underline;
-  color: #f1cfb9;
+  color: #f8f8f8;
 }
 /* ======== Head =========*/
 
@@ -346,7 +346,7 @@ a {
 
 .home .text-wrapper-2 {
   flex: 1;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-bold-font-family), serif;
   font-weight: var(--paragraph-medium-bold-font-weight);
   font-size: var(--paragraph-medium-bold-font-size);
@@ -369,7 +369,7 @@ a {
   align-self: stretch;
   font-family: "Roboto Mono", Helvetica, serif;
   font-weight: 400;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-size: 12px;
   text-align: center;
   letter-spacing: -0.03px;
@@ -1066,7 +1066,7 @@ a {
 
 .home .text-small-bold {
   width: fit-content;
-  color: #bdb7bd;
+  color: #f6f6f6;
   white-space: nowrap;
   font-family: var(--paragraph-small-bold-font-family), serif;
   font-weight: var(--paragraph-small-bold-font-weight);
@@ -1168,7 +1168,7 @@ a {
 }
 
 .text-color-primary {
-  color: #f1cfb9;
+  color: #f7f7f7;
 }
 
 .text-align-center {
@@ -1267,7 +1267,7 @@ a {
   margin-top: -1px;
   font-family: "Roboto Mono", Helvetica, serif;
   font-weight: 700;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-size: 16px;
   text-align: center;
   letter-spacing: -0.03px;
@@ -1524,7 +1524,7 @@ a {
 .leadership .p {
   position: relative;
   align-self: stretch;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
@@ -2006,7 +2006,7 @@ services .frame-4 {
   align-self: stretch;
   font-family: var(--headline-h6-font-family);
   font-weight: var(--headline-h6-font-weight);
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-size: var(--headline-h6-font-size);
   text-align: center;
   letter-spacing: var(--headline-h6-letter-spacing);
@@ -2019,7 +2019,7 @@ services .frame-4 {
   align-self: stretch;
   font-family: var(--headline-h6-font-family);
   font-weight: var(--headline-h6-font-weight);
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-size: var(--headline-h6-font-size);
   text-align: center;
   letter-spacing: var(--headline-h6-letter-spacing);
@@ -2030,7 +2030,7 @@ services .frame-4 {
 .services .p1 {
   position: relative;
   align-self: stretch;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
@@ -2072,7 +2072,7 @@ services .frame-4 {
 .services .div-2 {
   position: relative;
   align-self: stretch;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
@@ -2240,7 +2240,7 @@ services .frame-4 {
 .careers .join-team-desc {
   position: relative;
   max-width: 700px;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
@@ -2396,7 +2396,7 @@ services .frame-4 {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
@@ -2473,7 +2473,7 @@ services .frame-4 {
   align-self: stretch;
   font-family: var(--headline-h6-font-family);
   font-weight: var(--headline-h6-font-weight);
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-size: var(--headline-h6-font-size);
   text-align: center;
   letter-spacing: var(--headline-h6-letter-spacing);
@@ -2570,7 +2570,7 @@ services .frame-4 {
 .resources .resources-desc {
   position: relative;
   max-width: 700px;
-  color: #f1cfb9;
+  color: #f8f8f8;
   font-family: var(--paragraph-medium-regular-font-family);
   font-weight: var(--paragraph-medium-regular-font-weight);
   font-size: var(--paragraph-medium-regular-font-size);
