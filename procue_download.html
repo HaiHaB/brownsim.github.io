@@ -38,9 +38,6 @@
                                     <a href="procue" class="menu-link">ProCue</a>
                                 </div>
                                 <div class="menu-item">
-                                    <a href="leadership" class="menu-link">Leadership &amp; Philosophy</a>
-                                </div>
-                                <div class="menu-item">
                                     <a href="services" class="menu-link">Services</a>
                                 </div>
                                 <div class="menu-item">
@@ -65,45 +62,39 @@
                     <div class="container-center container-padding">
                         <div class="row gap48">
                             <div class="col-auto f-flex">
-
                                 <div class="profile-desc">
+                                <div class="welcome"></div>
+                                <div class="wrapper">
+                                    <br><div class="text-h2">Thank you for downloading ProCue!</div><br>
+                                    <label for="userKey">Please input your download key: </label> <br>
+                                    <input type="text" id="userKey" name="userKey"  class="text-box"><br><br>
+                                    <label for="userKey">Please choose ProCue version </label> <br>
+                                        <select name="version-artifacts" id="version" class="version-box">
+                                        <option value="88d4340e-1be4-497a-8c97-006f66a49d77/83d7c61d-6f16-4b3d-862d-56fad02c9593">1.1.6</option>
+                                        <option value="342788d8-9b8a-48a9-a4d0-28e087176ada/6a4517eb-f7ab-463d-ac53-977757d46736">1.1.5</option>
+                                    </select>
+                                    <br><br>
 
 
-<div class="welcome"></div>
-                <div class="wrapper">
+                                    <button class="btn" onclick="myFunction()"><span class="btn-inner">Download</span></button>
+                                    <p id="demo"></p>
 
-                    <br><div class="text-h2">Thank you for downloading ProCue!</div><br>
-
-
-                    <label for="userKey">Please input your download key: </label> <br>
-                    <input type="text" id="userKey" name="userKey"  class="text-box"><br><br>
-                    <label for="userKey">Please choose ProCue version </label> <br>
-                        <select name="version-artifacts" id="version" class="version-box">
-                        <option value="88d4340e-1be4-497a-8c97-006f66a49d77/83d7c61d-6f16-4b3d-862d-56fad02c9593">1.1.6</option>
-                        <option value="342788d8-9b8a-48a9-a4d0-28e087176ada/6a4517eb-f7ab-463d-ac53-977757d46736">1.1.5</option>
-                    </select>
-                    <br><br>
-
-
-                    <button class="btn" onclick="myFunction()"><span class="btn-inner">Download</span></button>
-                    <p id="demo"></p>
-
-                    <!-- a userKey that works: key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== -->
-                    <!-- a link that works: https://get.keygen.sh/21fb0e38-8a9e-445a-94dc-e5e8621672fd/7c60b67b-5d03-4c08-9d7d-147499022c3b/0ff438dc-ac3d-4915-b008-73853fbfba8e?auth=license:key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== -->
-                    <!-- a curl request that works (but it doesnt really download everything): curl -G -X GET https://get.keygen.sh/21fb0e38-8a9e-445a-94dc-e5e8621672fd/7c60b67b-5d03-4c08-9d7d-147499022c3b/0ff438dc-ac3d-4915-b008-73853fbfba8e -d auth=license:key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== --output Atom_BrownSim.tgz -->
-                    <!-- Reference Page: https://keygen.sh/docs/api/short-urls/ -->
-                    <!-- https://get.keygen.sh/<accounts>/<release>/<antifacts-token>?auth=license:<user_key> -->
-                    <script>
-                        function myFunction() {
-                            userKey = document.getElementById("userKey").value;
-                            version = document.getElementById("version").value;
-                            accounts = "21fb0e38-8a9e-445a-94dc-e5e8621672fd/"
-                            document.getElementById("demo").innerHTML = '<br><div class="text-h3">Thank you for downloading ProCue</div>' +
-                                '<br><p>Your download should start automatically. If you have "Unauthorise" error, please check your user key or contact us at support@brownsim.io</p>    '
-                            window.location.href = "https://get.keygen.sh/" + accounts + version + "?auth=license:" + userKey;
-                        }
-                    </script>
-                </div>
+                                    <!-- a userKey that works: key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== -->
+                                    <!-- a link that works: https://get.keygen.sh/21fb0e38-8a9e-445a-94dc-e5e8621672fd/7c60b67b-5d03-4c08-9d7d-147499022c3b/0ff438dc-ac3d-4915-b008-73853fbfba8e?auth=license:key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== -->
+                                    <!-- a curl request that works (but it doesnt really download everything): curl -G -X GET https://get.keygen.sh/21fb0e38-8a9e-445a-94dc-e5e8621672fd/7c60b67b-5d03-4c08-9d7d-147499022c3b/0ff438dc-ac3d-4915-b008-73853fbfba8e -d auth=license:key/eyJhY2NvdW50Ijp7ImlkIjoiMjFmYjBlMzgtOGE5ZS00NDVhLTk0ZGMtZTVlODYyMTY3MmZkIn0sInByb2R1Y3QiOnsiaWQiOiJmOTgxNzlkYi1hNDAzLTRmZTUtOTgyOC0wMWJjMTIyZDc2YjQifSwicG9saWN5Ijp7ImlkIjoiOTEyNDM1YTctZWMyMS00OGQ2LWExM2MtZWExOGY4ODM5MjBiIiwiZHVyYXRpb24iOjMxNTM2MDAwfSwidXNlciI6bnVsbCwibGljZW5zZSI6eyJpZCI6IjQwNGEwNmM3LWQ0NzItNDJlZS04OTcwLWM5M2UwYjgyMTdmOSIsImNyZWF0ZWQiOiIyMDIzLTExLTEwVDAyOjE1OjI4LjEwMFoiLCJleHBpcnkiOm51bGx9fQ==.xsqhM-FzocuScydo6_Z9QALPRkjm_UgSLijonBrkQ6P1LzswtdrkHkG96KJ76UeBXbf6lArsVwvOQJeTJC3dDQ== --output Atom_BrownSim.tgz -->
+                                    <!-- Reference Page: https://keygen.sh/docs/api/short-urls/ -->
+                                    <!-- https://get.keygen.sh/<accounts>/<release>/<antifacts-token>?auth=license:<user_key> -->
+                                    <script>
+                                        function myFunction() {
+                                            userKey = document.getElementById("userKey").value;
+                                            version = document.getElementById("version").value;
+                                            accounts = "21fb0e38-8a9e-445a-94dc-e5e8621672fd/"
+                                            document.getElementById("demo").innerHTML = '<br><div class="text-h3">Thank you for downloading ProCue</div>' +
+                                                '<br><p>Your download should start automatically. If you have "Unauthorise" error, please check your user key or contact us at support@brownsim.io</p>    '
+                                            window.location.href = "https://get.keygen.sh/" + accounts + version + "?auth=license:" + userKey;
+                                        }
+                                    </script>
+                                </div>
                                 </div>
                             </div>
                         </div>
