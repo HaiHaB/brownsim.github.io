@@ -1015,7 +1015,7 @@ a {
 }
 
 .text-small {
-  color: #bdb7bd;
+  color: #f8f8f8;
   position: relative;
   width: fit-content;
 
@@ -1042,7 +1042,7 @@ a {
 }
 
 .services .text-small {
-  color: #bdb7bd;
+  color: #f8f8f8;
   align-self: stretch;
   font-family: var(--paragraph-small-regular-font-family), serif;
   font-weight: var(--paragraph-small-regular-font-weight);
@@ -1054,7 +1054,7 @@ a {
 
 .services .text-small-bold {
   width: fit-content;
-  color: #bdb7bd;
+  color: #f7f7f7;
   white-space: nowrap;
   font-family: var(--paragraph-small-bold-font-family), serif;
   font-weight: var(--paragraph-small-bold-font-weight);
