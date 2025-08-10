@@ -851,7 +851,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #fafafa;
+  background-color: #2a1609;
 }
 
 .home .frame-24 {
@@ -938,6 +938,17 @@ a {
   box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5);
   object-fit: cover;
   border-radius: 8px;
+}
+
+.image-shadow-white-background {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #FFFAF1
 }
 
 .home .frame-25 {
@@ -1973,6 +1984,12 @@ a {
   background-color: #312c31;
 }
 
+services .frame-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #312c31;
+}
 .services .frame-4 {
   display: flex;
   flex-direction: column;
@@ -2009,6 +2026,19 @@ a {
   line-height: var(--headline-h6-line-height);
   font-style: var(--headline-h6-font-style);
 }
+
+.services .p1 {
+  position: relative;
+  align-self: stretch;
+  color: #f1cfb9;
+  font-family: var(--paragraph-medium-regular-font-family);
+  font-weight: var(--paragraph-medium-regular-font-weight);
+  font-size: var(--paragraph-medium-regular-font-size);
+  letter-spacing: var(--paragraph-medium-regular-letter-spacing);
+  line-height: var(--paragraph-medium-regular-line-height);
+  font-style: var(--paragraph-medium-regular-font-style);
+}
+
 
 .services .frame-5 {
   display: flex;
@@ -2095,6 +2125,18 @@ a {
   width: 100%;
   flex: 0 0 auto;
 }
+
+.services .frame-8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
 
 .services .span {
   letter-spacing: var(--paragraph-medium-regular-letter-spacing);
@@ -2691,6 +2733,12 @@ a {
     max-width: 690px;
     width: 100%;
   }
+  .services .icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+  }
+
 }
 
 @media (max-width: 767px) {

@@ -277,7 +277,7 @@ class MobileHeader extends HTMLElement {
     <ul class="menu-dropdown-content">
         <li style="--menu-delay: 1;"><a href="procue">ProCue</a></li>
         <li style="--menu-delay: 2;"><a href="leadership">Leadership &amp; Philosophy</a></li>
-        <li style="--menu-delay: 3;"><a href="services">Capabilities &amp; Services</a></li>
+        <li style="--menu-delay: 3;"><a href="services">Services</a></li>
         <li style="--menu-delay: 4;"><a href="careers">Careers</a></li>
         <li style="--menu-delay: 4;"><a href="resources">Resources</a></li>
     </ul>
@@ -349,7 +349,7 @@ class Header extends HTMLElement {
             <a href="leadership" class="menu-link">Leadership &amp; Philosophy</a>
         </div>
         <div class="menu-item">
-            <a href="services" class="menu-link">Capabilities &amp; Services</a>
+            <a href="services" class="menu-link">Services</a>
         </div>
         <div class="menu-item">
             <a href="careers" class="menu-link">Careers</a>
