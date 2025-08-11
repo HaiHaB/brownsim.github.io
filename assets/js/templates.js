@@ -279,6 +279,7 @@ class MobileHeader extends HTMLElement {
         <li style="--menu-delay: 3;"><a href="services">Services</a></li>
         <li style="--menu-delay: 4;"><a href="careers">Careers</a></li>
         <li style="--menu-delay: 4;"><a href="resources">Resources</a></li>
+        <li style="--menu-delay: 4;"><a href="procue_download">Downloads</a></li>
     </ul>
 </div>
     `;
@@ -352,6 +353,9 @@ class Header extends HTMLElement {
         </div>
         <div class="menu-item">
             <a href="resources" class="menu-link">Resources</a>
+        </div>
+        <div class="menu-item">
+            <a href="procue_download" class="menu-link">Downloads</a>
         </div>
     </div>
 
