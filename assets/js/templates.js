@@ -279,6 +279,7 @@ class MobileHeader extends HTMLElement {
         <li style="--menu-delay: 3;"><a href="services">Services</a></li>
         <li style="--menu-delay: 4;"><a href="careers">Careers</a></li>
         <li style="--menu-delay: 4;"><a href="resources">Resources</a></li>
+        <li style="--menu-delay: 4;"><a href="procue_download">Downloads</a></li>
     </ul>
 </div>
     `;
@@ -353,6 +354,9 @@ class Header extends HTMLElement {
         <div class="menu-item">
             <a href="resources" class="menu-link">Resources</a>
         </div>
+        <div class="menu-item">
+            <a href="procue_download" class="menu-link">Downloads</a>
+        </div>
     </div>
 
     <script>
@@ -372,144 +376,3 @@ class Header extends HTMLElement {
 }
 
 customElements.define("header-component", Header);
-
-// class RequestTrial extends HTMLElement {
-//   constructor() {
-//     super();
-//   }
-
-//   connectedCallback() {
-//     this.innerHTML = `
-//       <style>
-
-//         .home .frame-16 {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: flex-start;
-//             gap: 24px;
-//             margin-top: 48px;
-//         }
-
-//         .home .vertical-logo-2 {
-//             position: relative;
-//             width: 80px;
-//             height: 60px;
-//         }
-
-//         .home .text-wrapper {
-//             position: relative;
-//             align-self: stretch;
-//             color: #ffffff;
-//             margin: 0;
-//             font-family: var(--headline-h1-font-family), serif;
-//             font-weight: var(--headline-h1-font-weight);
-//             font-size: var(--headline-h1-font-size);
-//             font-style: var(--headline-h1-font-style);
-//             letter-spacing: var(--headline-h1-letter-spacing);
-//             line-height: var(--headline-h1-line-height);
-//         }
-
-//         @media (max-width: 767px) {
-//             .home .frame-16 .text-wrapper {
-//                 margin: 0;
-//             }
-//         }
-
-//         .home .frame-3 {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             gap: 16px;
-//             padding: 16px;
-//             position: relative;
-//             align-self: stretch;
-//             width: 100%;
-//             flex: 0 0 auto;
-//             background-color: #2c3317;
-//             border-radius: 8px;
-//             border: 1px solid;
-//             border-color: #ffe08c;
-//             margin-bottom: 48px;
-//         }
-
-//         .home .frame-4 {
-//             display: flex;
-//             align-items: flex-start;
-//             gap: 4px;
-//             position: relative;
-//             align-self: stretch;
-//             width: 100%;
-//             flex: 0 0 auto;
-//         }
-
-//         .home .text-wrapper-2 {
-//             flex: 1;
-//             color: #f1cfb9;
-//             font-family: var(--paragraph-medium-bold-font-family), serif;
-//             font-weight: var(--paragraph-medium-bold-font-weight);
-//             font-size: var(--paragraph-medium-bold-font-size);
-//             font-style: var(--paragraph-medium-bold-font-style);
-//             letter-spacing: var(--paragraph-medium-bold-letter-spacing);
-//             line-height: var(--paragraph-medium-bold-line-height);
-//         }
-
-//         .home .text-wrapper-3 {
-//             position: relative;
-//             width: fit-content;
-//             color: #ffd053;
-//             text-align: right;
-//             text-decoration: underline;
-//             white-space: nowrap;
-//         }
-
-//         .btn-full {
-//             width: 100%;
-//         }
-
-//         .btn-inner {
-//             all: unset;
-//             box-sizing: border-box;
-//             position: relative;
-//             flex: 1;
-//             text-align: center;
-//             color: #2c3317;
-//             font-family: var(--paragraph-medium-bold-font-family), serif;
-//             font-weight: var(--paragraph-medium-bold-font-weight);
-//             font-style: var(--paragraph-medium-bold-font-style);
-//             font-size: var(--paragraph-medium-bold-font-size);
-//             letter-spacing: var(--paragraph-medium-bold-letter-spacing);
-//             line-height: var(--paragraph-medium-bold-line-height);
-//         }
-
-//         .text-robo {
-//             position: relative;
-//             align-self: stretch;
-//             font-family: "Roboto Mono", Helvetica, serif;
-//             font-weight: 400;
-//             color: #f1cfb9;
-//             font-size: 12px;
-//             text-align: center;
-//             letter-spacing: -0.03px;
-//             line-height: 18px;
-//         }
-
-//     </style>
-
-//     <div class="col-md-6 frame-16">
-//         <img class="vertical-logo-2" src="assets/img/procue-logo-vert.svg" alt="ProCue Logo"/>
-//         <p class="text-wrapper">Hackable motion cueing for the 21st Century</p>
-//         <div class="frame-3">
-//             <div class="frame-4">
-//                 <div class="text-wrapper-2">Version 1.63</div>
-//                 <a href="#" class="text-wrapper-3">Release note</a>
-//             </div>
-//             <button class="btn btn-full"><span class="btn-inner">Request Trial</span></button>
-//             <p class="text-robo">By downloading, you agree to the <a
-//             href="https://www.termsfeed.com/live/e58a8d72-8d54-4363-8606-6d944a2aa70f">Procue EULA</a>.</p>
-//         </div>
-//     </div>
-//     `;
-//   }
-// }
-
-// customElements.define('requestTrial-component', RequestTrial);
