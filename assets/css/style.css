@@ -873,7 +873,7 @@ a {
   gap: 8px;
   padding: 8px 16px;
   position: relative;
-  background-color: #0f1116;
+  background-color: #ffd053;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -884,7 +884,7 @@ a {
   position: relative;
   flex: 1;
   text-align: center;
-  color: #fafafa;
+  color: #2c3317;
   font-family: var(--paragraph-medium-bold-font-family), serif;
   font-weight: var(--paragraph-medium-bold-font-weight);
   font-style: var(--paragraph-medium-bold-font-style);
@@ -2283,7 +2283,7 @@ services .frame-4 {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid;
-  border-color: #625862;
+  border-color: #ffd053;
 }
 
 .careers-list > * {
