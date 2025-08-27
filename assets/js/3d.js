@@ -98,7 +98,6 @@ const Head = {
         // Original material
         child.material = new THREE.MeshStandardMaterial({
           side: THREE.FrontSide,
-          visible: false,
         });
 
         // Create wireframe geometry and material
