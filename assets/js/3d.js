@@ -98,13 +98,13 @@ const Head = {
         // Original material
         child.material = new THREE.MeshStandardMaterial({
           side: THREE.FrontSide,
+          visible: false,
         });
 
         // Create wireframe geometry and material
         const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
         const wireframeMaterial = new THREE.LineBasicMaterial({
           color: 0xffffff,
-          visible: false,
         });
         const wireframe = new THREE.LineSegments(
           wireframeGeometry,
