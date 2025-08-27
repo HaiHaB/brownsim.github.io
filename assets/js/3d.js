@@ -104,7 +104,7 @@ const Head = {
         const wireframeGeometry = new THREE.WireframeGeometry(child.geometry);
         const wireframeMaterial = new THREE.LineBasicMaterial({
           color: 0xffffff,
-          transparent: true,
+          visible: false,
         });
         const wireframe = new THREE.LineSegments(
           wireframeGeometry,
