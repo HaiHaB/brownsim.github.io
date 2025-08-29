@@ -391,9 +391,13 @@ a {
 }
 
 .home .logo-horizontal {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
   position: relative;
-  width: 420px;
-  /* height: 60px; */
+  /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .flex-container {
