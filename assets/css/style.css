@@ -1032,20 +1032,6 @@ a {
   font-style: var(--paragraph-small-regular-font-style);
 }
 
-.text-h1 {
-  position: relative;
-  width: fit-content;
-  color: #ffffff;
-  text-align: center;
-
-  font-family: var(--headline-h1-font-family), serif;
-  font-weight: var(--headline-h1-font-weight);
-  font-size: var(--headline-h1-font-size);
-  font-style: var(--headline-h1-font-style);
-  letter-spacing: var(--headline-h1-letter-spacing);
-  line-height: var(--headline-h1-line-height);
-}
-
 .services .text-small {
   color: #f8f8f8;
   align-self: stretch;
@@ -1105,6 +1091,20 @@ a {
   width: fit-content;
   color: #ffffff;
   text-align: center;
+
+  font-family: var(--headline-h1-font-family), serif;
+  font-weight: var(--headline-h1-font-weight);
+  font-size: var(--headline-h1-font-size);
+  font-style: var(--headline-h1-font-style);
+  letter-spacing: var(--headline-h1-letter-spacing);
+  line-height: var(--headline-h1-line-height);
+}
+
+.text-h1-left-align {
+  position: relative;
+  width: fit-content;
+  color: #ffffff;
+  text-align: left;
 
   font-family: var(--headline-h1-font-family), serif;
   font-weight: var(--headline-h1-font-weight);
