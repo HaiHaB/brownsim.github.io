@@ -54,16 +54,60 @@
 
 (function () {
   const dropdownBtn = document.querySelector(".menu-dropdown-btn");
-  const dropdownCaret = document.querySelector(".nav-container");
-  const dropdownContent = document.querySelector(".menu-dropdown-content");
+  const dropdownCaret = document.querySelector(".hamburger");
+  const dropdownContent = document.querySelector(".hamburger-dropdown-content");
 
-  // add click event to dropdown button
-  dropdownBtn.addEventListener("click", function () {
-    // add rotate to caret element
-    dropdownCaret.classList.toggle("active");
-    // add open styles to menu element
-    dropdownContent.classList.toggle("menu-open");
+    // add click event to dropdown button
+    dropdownBtn.addEventListener("click", function () {
+      // add rotate to caret element
+      dropdownCaret.classList.toggle("active");
+      // add open styles to menu element
+      dropdownContent.classList.toggle("open");
   });
+})();
+
+(function () {
+      var header = document.getElementById("myMenu");
+      var items = header.getElementsByClassName(".item");
+      for (var i = 0; i < items.length; i++) {
+          items[i].addEventListener("click", function() {
+              // Remove "active" class from the currently active item
+              // var current = document.getElementsByClassName("active");
+              // if (current.length > 0) {
+              //     current[0].className = current[0].className.replace(" active", "");
+              // }
+              // // Add "active" class to the clicked item
+              // this.className += " active";
+
+              this.classList.toggle("active");
+          });
+      }
+
+    // Add active class to the current button (highlight it)
+    // var header = document.getElementById("myMenu"); // Get the parent container
+    // if (header) {
+    //     var items = header.getElementsByClassName(".item"); // Get all items with the class "item"
+    //     console.log("Items found:", items); // Debugging: Check if items are being selected
+
+    //     for (var i = 0; i < items.length; i++) {
+    //         items[i].addEventListener("click", function () {
+    //             console.log("Clicked item:", this); // Debugging: Log the clicked item
+
+    //             // Remove "active" class from the currently active item
+    //             var current = document.getElementsByClassName("active");
+    //             if (current.length > 0) {
+    //                 console.log("Removing active class from:", current[0]); // Debugging: Log the current active item
+    //                 current[0].className = current[0].className.replace(" active", "");
+    //             }
+
+    //             // Add "active" class to the clicked item
+    //             this.className += " active";
+    //             console.log("Added active class to:", this); // Debugging: Log the item that received the active class
+    //         });
+    //     }
+    // } else {
+    //     console.error("Element with id 'myMenu' not found!"); // Debugging: Log if the parent container is missing
+    // }
 })();
 
 (function () {
