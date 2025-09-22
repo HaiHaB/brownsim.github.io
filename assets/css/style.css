@@ -1000,7 +1000,7 @@ a {
 .home .frame-26 {
   display: flex;
   flex-direction: column;
-  max-width: 792px;
+  width: 95%;;
   align-items: center;
   gap: 24px;
   position: relative;
@@ -1119,7 +1119,6 @@ a {
   gap: 48px;
   position: relative;
   flex: 0 0 auto;
-  /* background-color: #0d1d2c; */
   background-color: #060e20
 }
 
@@ -2136,7 +2135,8 @@ services .frame-4 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 12px;
+  /* margin-bottom: 40px; */
 }
 
 .text-h2 {
@@ -2201,24 +2201,26 @@ services .frame-4 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 48px;
+  gap: 12px;
   position: relative;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
 }
 
-.services .frame-8 {
+
+.services .frame-16 {
+  background-color: #0d1d2c;
+}*/
+
+.procue .frame-17 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 16px;
   position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
+  border-radius: 8px;
 }
-
 
 .services .span {
   letter-spacing: var(--paragraph-medium-regular-letter-spacing);
@@ -2277,6 +2279,8 @@ services .frame-4 {
   width: 24px;
   height: 24px;
 }
+
+
 
 /* ======== Service =========*/
 
@@ -2878,6 +2882,10 @@ services .frame-4 {
 
   .leadership .frame-6 {
     margin-bottom: 24px;
+  }
+
+  .services .frame-6 {
+    margin-bottom: 48px;
   }
 }
 
