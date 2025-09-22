@@ -508,7 +508,7 @@ a {
   position: relative;
   align-self: stretch;
   text-align: center;
-  /* margin-top: -1px; */
+   margin-top: -1px;
   color: #ffffff;
   font-family: var(--headline-h5-font-family), serif;
   font-weight: var(--headline-h5-font-weight);
@@ -586,9 +586,10 @@ a {
 
 .menu-container {
   display: flex;
-  gap: 0;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  vertical-align: center;
+  justify-content: space-between;
 }
 
 .logo {

@@ -252,36 +252,35 @@ class MobileHeader extends HTMLElement {
 
 
     <div class="container-fluid mobile-menu">
-    <div class="row justify-content-between">
-        <div class="col-8">
-            <a class="mobile-logo" href="index" title="BrownSim logo">
-                <img src="assets/img/logo.svg" alt="BrownSim logo"/>
-            </a>
+
+        <div class="row justify-content-between">
+            <div class="col-8">
+                <a class="mobile-logo" href="index" title="BrownSim logo">
+                    <img src="assets/img/logo.svg" alt="BrownSim logo"/>
+                </a>
+            </div>
+
+            <div class="col-auto nav-container">
+                <span class="hamburger-lines menu-dropdown-btn"
+                    aria-label="menu button"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-controls="dropdown-menu">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </span>
+            </div>
         </div>
 
-
-
-        <div class="col-auto nav-container">
-            <span class="hamburger-lines menu-dropdown-btn"
-                  aria-label="menu button"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  aria-controls="dropdown-menu">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </span>
-        </div>
+        <ul class="menu-dropdown-content">
+            <li style="--menu-delay: 1;"><a href="procue">ProCue</a></li>
+            <li style="--menu-delay: 3;"><a href="services">Services</a></li>
+            <li style="--menu-delay: 4;"><a href="careers">Careers</a></li>
+            <li style="--menu-delay: 4;"><a href="resources">Resources</a></li>
+            <li style="--menu-delay: 4;"><a href="procue_download">Downloads</a></li>
+        </ul>
     </div>
-
-    <ul class="menu-dropdown-content">
-        <li style="--menu-delay: 1;"><a href="procue">ProCue</a></li>
-        <li style="--menu-delay: 3;"><a href="services">Services</a></li>
-        <li style="--menu-delay: 4;"><a href="careers">Careers</a></li>
-        <li style="--menu-delay: 4;"><a href="resources">Resources</a></li>
-        <li style="--menu-delay: 4;"><a href="procue_download">Downloads</a></li>
-    </ul>
-</div>
     `;
   }
 }
@@ -307,8 +306,6 @@ class Header extends HTMLElement {
 
             .menu-item {
                 display: inline-flex;
-                height: 60px;
-                padding: 8px 24px;
                 flex: 0 0 auto;
                 flex-direction: column;
                 align-items: center;
@@ -321,7 +318,7 @@ class Header extends HTMLElement {
                 width: fit-content;
                 text-align: center;
                 white-space: nowrap;
-                color: #bdb7bd;
+                color: #ffffff;
                 font-family: var(--paragraph-medium-bold-font-family), serif;
                 font-weight: var(--paragraph-medium-bold-font-weight);
                 font-size: var(--paragraph-medium-bold-font-size);
