@@ -726,7 +726,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617cc;
+  background-color: #171617;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -785,7 +785,7 @@ a {
   gap: 10px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #171617cc;
+  background-color: #171617;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -817,7 +817,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617cc;
+  background-color: #171617;
   border-radius: 4px;
 }
 
@@ -994,7 +994,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #060e20
+  background-color: #1a3956
 }
 
 .home .frame-26 {
@@ -1119,7 +1119,7 @@ a {
   gap: 48px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #060e20
+  background-color: #1a3956
 }
 
 .procue .frame-10 {
@@ -1335,7 +1335,7 @@ a {
 }
 
 .procue .frame-18 {
-  background-color: #060e20
+  background-color: #1a3956
 }
 
 .procue .we-read-and {
@@ -1428,7 +1428,7 @@ a {
   gap: 24px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #060e20
+  background-color: #1a3956
 }
 
 .procue .text-wrapper-15 {
@@ -2028,7 +2028,7 @@ a {
   flex-direction: column;
   align-items: flex-start;
   /* background-color: #0d1d2c; */
-  background-color: #060e20;
+  background-color: #1a3956;
 }
 
 .services .our-services-wrapper {
@@ -2301,7 +2301,7 @@ services .frame-4 {
 
 .careers .frame-3 {
   /* background-color: #0d1d2c; */
-  background-color: #060e20;
+  background-color: #1a3956;
 }
 
 .careers .text-wrapper-2 {
@@ -2570,7 +2570,7 @@ services .frame-4 {
 }
 
 .resources .frame-7 {
-  background-color: #060e20;
+  background-color: #1a3956;
 }
 
 .resources .frame-10 {
