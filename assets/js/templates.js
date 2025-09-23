@@ -169,7 +169,7 @@ class MobileHeader extends HTMLElement {
         .nav-container .hamburger-lines {
         height: 18px;
         width: 24px;
-        margin-top: 6px;
+        margin-top: 9px;
         z-index: 2;
         display: flex;
         flex-direction: column;
