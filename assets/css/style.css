@@ -2730,6 +2730,10 @@ services .frame-4 {
     display: none !important;
   }
 
+  .menu-container {
+    flex-direction: row;
+  }
+
   .home .frame-25 {
     padding: 64px 0;
     gap: 48px;
