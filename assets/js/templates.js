@@ -98,7 +98,7 @@ class Footer extends HTMLElement {
                 .vertical-list {
                     gap: 10px;
                 }
-                    
+
                 .footer .logogroup div:last-child {
                     padding-top: 30px;
                 }
@@ -128,7 +128,7 @@ class Footer extends HTMLElement {
                         <div class="col-md-6 col-lg-3 order-lg-2 grap-vert">
                             <div class="vertical-list footer-nav">
                                 <h3>Navigation</h3>
-                                <div class="footer-nav-link">
+                                <div class="footer-nav-link social">
                                     <a href="procue.html">ProCue</a>
                                     <a href="services.html">Services</a>
                                     <a href="careers.html">Careers</a>
@@ -141,7 +141,7 @@ class Footer extends HTMLElement {
                         <div class="col-md-6 col-lg-3 grap-vert">
                             <div class="vertical-list">
                                 <h3>Policies</h3>
-                                <div class="footer-nav-link">
+                                <div class="footer-nav-link social">
                                 <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=79c27c29-6203-4535-93f6-12fae24f3347">Privacy Policy</a>
                                 <a href="https://app.termly.io/policy-viewer/policy.html?policyUUID=33799b21-62d2-4d4c-94d8-2627fb48e5e3">Cookie Policy</a>
                                 </div>
@@ -164,7 +164,7 @@ class Footer extends HTMLElement {
 
                                 <div class="address-container">
                                     <img class="img-2" src="assets/img/mail.png" alt="Email icon">
-                                    <address class="d-none d-lg-block">
+                                    <address class="d-none d-lg-block social">
                                         Suite 126, Westlink House<br>
                                         981 Great West Road<br>
                                         London<br>
@@ -172,14 +172,14 @@ class Footer extends HTMLElement {
                                         TW8 9DN
                                     </address>
 
-                                    <address class="d-lg-none">
+                                    <address class="d-lg-none social">
                                         Suite 126, Westlink House<br>
                                         981 Great West Road London United Kingdom TW8 9DN
                                     </address>
                                 </div>
                             </div>
                         </div>
-                    
+
                     </div>
                 </div>
 
