@@ -583,6 +583,9 @@ a {
 }
 
 .menu-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   background-color: #171617;
@@ -621,7 +624,7 @@ a {
 
 .menu-item {
   display: inline-flex;
-  height: 60px;
+  height: 65px;
   padding: 8px 24px;
   flex: 0 0 auto;
   flex-direction: column;
@@ -2741,7 +2744,7 @@ services .frame-4 {
   }
 
   .home .menu-item {
-    height: 60px;
+    height: 65px;
   }
 
   .home .menu-item-space {

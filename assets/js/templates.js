@@ -307,7 +307,7 @@ class Header extends HTMLElement {
 
             .menu-item {
                 display: inline-flex;
-                height: 60px;
+                height: 65px;
                 padding: 8px 24px;
                 flex: 0 0 auto;
                 flex-direction: column;
