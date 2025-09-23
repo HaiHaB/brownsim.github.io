@@ -45,6 +45,9 @@ a {
 
 /* ======== Menu =========*/
 .mobile-menu {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
   padding: 7px 24px;
   background-color: #171617;
 }
@@ -629,9 +632,6 @@ a {
 }
 
 .menu-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
   align-items: center;
   background-color: #171617;
