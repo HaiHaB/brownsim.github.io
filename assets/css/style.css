@@ -2286,6 +2286,18 @@ services .frame-4 {
   line-height: var(--headline-h2-line-height);
 }
 
+.text-h2-center {
+  position: relative;
+  align-self: stretch;
+  color: #ffffff;
+  font-family: var(--headline-h2-font-family), serif;
+  font-weight: var(--headline-h2-font-weight);
+  font-size: var(--headline-h2-font-size);
+  font-style: var(--headline-h2-font-style);
+  letter-spacing: var(--headline-h2-letter-spacing);
+  line-height: var(--headline-h2-line-height);
+  text-align: center;
+}
 .services .div-2 {
   position: relative;
   align-self: stretch;
