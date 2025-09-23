@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="color-scheme" content="light only">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EULA - Procue</title>
     <meta name="End-User License Agreement for ProCue"
@@ -24,38 +25,25 @@
 
     <mobile-header-component></mobile-header-component>
 
-    <div class="container-fluid">
+    <div class="container-fluid sticky-menu">
         <div class="row">
             <div class="p-0 home home-page">
                 <div class="menu-bar">
                     <div class="container-center">
                         <div class="menu-container">
                             <a class="logo" href="index" title="BrownSim logo">
-                                <img src="assets/img/logo.svg" alt="BrownSim logo" />
+                                <img src="assets/img/logo.svg" alt="BrownSim logo"/>
                             </a>
-                            <div class="menu">
-                                <div class="menu-item">
-                                    <a href="procue" class="menu-link">ProCue</a>
-                                </div>
-                                <div class="menu-item">
-                                    <a href="services" class="menu-link">Services</a>
-                                </div>
-                                <div class="menu-item">
-                                    <a href="careers" class="menu-link">Careers</a>
-                                </div>
-								<div class="menu-item">
-									<a href="resources" class="menu-link">Resources</a>
-								</div>
-                                <div class="menu-item active">
-                                    <a href="procue_download" class="menu-link">Downloads</a>
-                                </div>
-                            </div>
+
+                            <header-component></header-component>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="container-fluid">
         <div class="row">
@@ -73,18 +61,22 @@
                             <div class="col-auto f-flex d-flex align-items-center">
                                 <div class="frame-6">
                                     <div class="wrapper">
-                                        <br><div class="text-h2">Thank you for downloading ProCue!</div><br>
+                                        <br>
+                                        <div class="text-h2-center">Thank you for downloading <strong><span style="color: #ffd053;">ProCue</span></strong>!</div>
+                                        <br>
                                         <label for="userKey">Please input your download key: </label> <br>
-                                        <input type="text" id="userKey" name="userKey"  class="text-box"><br><br>
-                                        <label for="userKey">Please choose ProCue version </label> <br>
-                                            <select name="version-artifacts" id="version" class="version-box">
+                                        <input type="text" id="userKey" name="userKey"  class="form-control"><br><br>
+                                        <label for="userKey">Please choose ProCue version </label>
+                                        <br>
+                                        <select name="version-artifacts" id="version" class="form-select">
                                             <option value="ceff31b3-0c3f-40cd-bde9-62a946e720bb/a61487de-4f37-4264-9b9b-ad26c74075bd">1.1.9</option>
                                             <option value="215ab110-f876-48bc-8d63-030a81079ee6/6d8da464-dbe3-4a46-b8dd-641f17be3320">1.1.8</option>
                                             <option value="41a20df4-2578-4525-b5e8-4ed8bb5cde0e/5e711340-87ce-4394-b421-7683b33b57c3">1.1.7</option>
                                             <option value="88d4340e-1be4-497a-8c97-006f66a49d77/83d7c61d-6f16-4b3d-862d-56fad02c9593">1.1.6</option>
                                             <option value="342788d8-9b8a-48a9-a4d0-28e087176ada/6a4517eb-f7ab-463d-ac53-977757d46736">1.1.5</option>
                                         </select>
-                                        <br><br>
+                                        <br>
+                                        <br>
 
 
                                         <button class="btn" onclick="myFunction()"><span class="btn-inner">Download</span></button>
