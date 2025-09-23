@@ -45,11 +45,14 @@ a {
 
 /* ======== Menu =========*/
 .mobile-menu {
+  padding: 9px 24px;
+  background-color: #171617;
+}
+
+.sticky-menu {
   position: sticky;
   top: 0;
   z-index: 10000;
-  padding: 9px 24px;
-  background-color: #171617;
 }
 
 .menu-dropdown {
