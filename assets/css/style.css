@@ -45,7 +45,7 @@ a {
 
 /* ======== Menu =========*/
 .mobile-menu {
-  padding: 9px 24px;
+  padding: 7px 24px;
   background-color: #171617;
 }
 
@@ -659,7 +659,8 @@ a {
 
 .mobile-logo {
   position: relative;
-  height: 30px;
+  display: inline-block;
+  height: 40px;
 }
 
 .menu {
@@ -670,7 +671,7 @@ a {
 
 .menu-item {
   display: inline-flex;
-  height: 65px;
+  height: 54px;
   padding: 8px 24px;
   flex: 0 0 auto;
   flex-direction: column;
@@ -2787,7 +2788,7 @@ services .frame-4 {
   }
 
   .home .menu-item {
-    height: 65px;
+    height: 54px;
   }
 
   .home .menu-item-space {

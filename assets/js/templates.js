@@ -110,7 +110,7 @@ class Footer extends HTMLElement {
         </style>
 
         <div class="container-fluid">
-            <div class="container-center">
+            <div class="p-0 container-center">
                 <div class="footer">
                     <div class="row">
 
@@ -346,8 +346,9 @@ class MobileHeader extends HTMLElement {
     this.innerHTML = `
       <style>
         .mobile-logo {
-        position: relative;
-        height: 30px;
+            position: relative;
+            display: inline-block;
+            height: 40px;
         }
 
         /* ======== Menu hamburger =========*/
@@ -438,7 +439,7 @@ class MobileHeader extends HTMLElement {
 
     <div class="container-fluid mobile-menu">
     <div class="row justify-content-between">
-        <div class="col-8">
+        <div class="col-8" style="line-height: 0">
             <a class="mobile-logo" href="index" title="BrownSim logo">
                 <img src="assets/img/logo.svg" alt="BrownSim logo"/>
             </a>
@@ -492,7 +493,7 @@ class Header extends HTMLElement {
 
             .menu-item {
                 display: inline-flex;
-                height: 65px;
+                height: 54px;
                 padding: 8px 24px;
                 flex: 0 0 auto;
                 flex-direction: column;
@@ -516,12 +517,12 @@ class Header extends HTMLElement {
                 text-decoration: none;
             }
             .menu-item.active {
-            border-bottom: 2px solid #ffd053;
-            padding-bottom: 6px;
+                border-bottom: 2px solid #ffd053;
+                padding-bottom: 6px;
             }
 
             .menu-item.active .menu-link {
-            color: #ffd053;
+                color: #ffd053;
             }
     </style>
 
