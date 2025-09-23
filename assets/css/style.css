@@ -1014,6 +1014,25 @@ a {
   border-radius: 8px;
 }
 
+.image-shadow-logo {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  border-radius: 8px;
+}
+.image-shadow-procue-logo {
+  width: 40%;
+  max-width: 50%;
+  height: auto;
+  position: relative;
+  /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .image-profile-pic {
   display: flex;
   width: 50%;
@@ -1048,7 +1067,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #1a3956
+  background-color: #060e20
 }
 
 .home .frame-26 {
@@ -1163,6 +1182,34 @@ a {
 }
 
 /* ======== ProCue =========*/
+.procue .frame-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.procue .frame-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 90%;
+  flex: 0 0 auto;
+  background-color: #2c3317;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #ffe08c;
+  margin-bottom: 48px;
+}
+
 .procue .frame-9 {
   display: flex;
   flex-direction: column;
@@ -1170,7 +1217,7 @@ a {
   gap: 48px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #1a3956
+  background-color: #060e20
 }
 
 .procue .frame-10 {
@@ -1181,6 +1228,13 @@ a {
   position: relative;
 }
 
+.procue .frame-11 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 24px;
+  position: relative;
+}
 .text-h1 {
   position: relative;
   width: fit-content;
@@ -1386,7 +1440,7 @@ a {
 }
 
 .procue .frame-18 {
-  background-color: #1a3956
+  background-color: #060e20
 }
 
 .procue .we-read-and {
@@ -1447,12 +1501,20 @@ a {
   font-style: var(--paragraph-small-bold-font-style);
 }
 
-.procue .frame-24 {
+/* .procue .frame-24 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   position: relative;
   flex: 0 0 auto;
+} */
+
+.procue .frame-24 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  position: relative;
 }
 
 .procue .img-3 {
@@ -1473,15 +1535,28 @@ a {
   white-space: nowrap;
 }
 
-.procue .frame-25 {
+/* .procue .frame-25 {
   display: inline-flex;
   align-items: center;
   gap: 24px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #1a3956
-}
+  background-color: #060e20
+} */
 
+.procue .frame-25 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 64px 0;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #060e20
+}
 .procue .text-wrapper-15 {
   position: relative;
   width: fit-content;
@@ -2079,7 +2154,7 @@ a {
   flex-direction: column;
   align-items: flex-start;
   /* background-color: #0d1d2c; */
-  background-color: #1a3956;
+  background-color: #060e20;
 }
 
 .services .our-services-wrapper {
@@ -2352,7 +2427,7 @@ services .frame-4 {
 
 .careers .frame-3 {
   /* background-color: #0d1d2c; */
-  background-color: #1a3956;
+  background-color: #060e20;
 }
 
 .careers .text-wrapper-2 {
@@ -2621,7 +2696,7 @@ services .frame-4 {
 }
 
 .resources .frame-7 {
-  background-color: #1a3956;
+  background-color: #060e20;
 }
 
 .resources .frame-10 {
@@ -2751,10 +2826,17 @@ services .frame-4 {
     margin-bottom: 0;
   }
 
+  .procue .frame-3 {
+    margin-bottom: 0;
+  }
+
   .home .frame-24 {
     max-width: 486px;
   }
 
+  .procue .frame-24 {
+    max-width: 486px;
+  }
   .home .rectangle-4 img,
   .home .rectangle-5 img {
     margin-top: 0;
@@ -2772,6 +2854,7 @@ services .frame-4 {
     width: calc(100% - 150px);
     margin-left: 150px;
   }
+
 }
 
 @media (min-width: 992px) {
@@ -2805,6 +2888,7 @@ services .frame-4 {
     gap: 64px;
     flex-direction: row;
   }
+
 }
 
 @media (min-width: 1000px) {
@@ -2870,7 +2954,6 @@ services .frame-4 {
     width: 48px;
     height: 48px;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -2897,6 +2980,10 @@ services .frame-4 {
   }
 
   .home .frame-24 {
+    gap: 24px;
+  }
+
+  .procue .frame-24 {
     gap: 24px;
   }
 
@@ -2931,11 +3018,36 @@ services .frame-4 {
   .services .frame-6 {
     margin-bottom: 48px;
   }
+  .image-shadow-logo{
+      align-items: left;
+      width: 40%;
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 30px;
+  }
+  .image-shadow-procue-logo{
+      align-items: left;
+      width: 20%;
+      height: auto; /* Maintain aspect ratio */
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 479px) {
   .matrix-container,
   .circle {
     display: none;
+  }
+  .image-shadow-logo{
+      align-items: left;
+      width: 40%;
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 30px;
+  }
+
+  .image-shadow-procue-logo{
+      align-items: left;
+      width: 20%;
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 30px;
   }
 }
