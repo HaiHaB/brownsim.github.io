@@ -49,7 +49,7 @@ a {
   top: 0;
   z-index: 10000;
   padding: 7px 24px;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .sticky-menu {
@@ -604,7 +604,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .footer-space {
@@ -648,7 +648,7 @@ a {
 .menu-bar {
   display: flex;
   align-items: center;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .menu-container {
@@ -736,7 +736,7 @@ a {
 .home .overlap-wrapper {
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .home .overlap {
@@ -795,7 +795,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -854,7 +854,7 @@ a {
   gap: 10px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -886,7 +886,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
 }
 
@@ -1045,7 +1045,7 @@ a {
   position: relative;
   /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
   object-fit: cover;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .image-profile-pic {
@@ -1101,7 +1101,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
   padding: 48px 0;
 }
 
@@ -1941,7 +1941,7 @@ a {
   position: absolute;
   top: 1228px;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .leadership .frame-10 {
@@ -2059,7 +2059,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .services .bw {
@@ -2388,7 +2388,7 @@ services .frame-4 {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .services .frame-9 {
@@ -2541,7 +2541,7 @@ services .frame-4 {
 }
 
 .careers-list .item.active {
-  background-color: #171617;
+  background-color: #000000;
   color: #ffd053;
 }
 
@@ -2687,7 +2687,7 @@ services .frame-4 {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .resources .div {
@@ -3047,13 +3047,13 @@ services .frame-4 {
   }
   .image-shadow-logo{
       align-items: left;
-      width: 40%;
+      width: 65%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
   .image-shadow-procue-logo{
       align-items: left;
-      width: 20%;
+      width: 30%;
       height: auto; /* Maintain aspect ratio */
     margin-bottom: 30px;
   }
@@ -3066,14 +3066,14 @@ services .frame-4 {
   }
   .image-shadow-logo{
       align-items: left;
-      width: 40%;
+      width: 65%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
 
   .image-shadow-procue-logo{
       align-items: left;
-      width: 20%;
+      width: 40%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
