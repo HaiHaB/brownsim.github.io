@@ -29,11 +29,11 @@ class Footer extends HTMLElement {
             }
 
             .footer .logogroup {
-                vertical-align: middle;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                align-items: start;
+                overflow: hidden;
+            }
+
+            .footer .logogroup div:last-child {
+                padding-top: 10px;
             }
 
             .vertical-list {
@@ -73,20 +73,16 @@ class Footer extends HTMLElement {
             }
 
             @media (min-width: 768px) {
-               
-
                 .footerlogo {
                     height: 60px;
-                }
-                    
-                .footer .logogroup {
-                    flex-direction: row;
-                    gap: 40px;
-                    align-items: center;
                 }
 
                 .footer-nav-link {
                     flex-direction: row;
+                }
+
+                .footer .logogroup div:last-child {
+                    padding-top: 0px;
                 }
 
                 .footer .footer-nav {
@@ -103,10 +99,8 @@ class Footer extends HTMLElement {
                     gap: 10px;
                 }
                     
-                .footer .logogroup {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 40px;
+                .footer .logogroup div:last-child {
+                    padding-top: 30px;
                 }
 
                 .footer .footer-nav, .footer-nav-link {
@@ -121,9 +115,13 @@ class Footer extends HTMLElement {
                     <div class="row">
 
                         <div class="col-md-12 col-lg-3 order-lg-3">
-                            <div class="logogroup">
-                                <img class="footerlogo" style="margin-left: -12px" src="assets/img/logo.svg" alt="BrownSim logo" />
-                                <img class="footerlogo" src="assets/img/procue-logo.svg" alt="ProCue logo" />
+                            <div class="row logogroup">
+                                <div class="col-md-6 col-lg-12">
+                                    <img class="footerlogo" style="margin-left: -12px" src="assets/img/logo.svg" alt="BrownSim logo" />
+                                </div>
+                                <div class="col-md-6 col-lg-12">
+                                    <img class="footerlogo" src="assets/img/procue-logo.svg" alt="ProCue logo" />
+                                </div>
                             </div>
                         </div>
 
