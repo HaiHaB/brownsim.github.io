@@ -7,7 +7,7 @@ class Footer extends HTMLElement {
     this.innerHTML = `
         <style>
             .footerlogo {
-                height: 40px;
+                height: 30px;
             }
 
             .grap-vert {
@@ -74,7 +74,7 @@ class Footer extends HTMLElement {
 
             @media (min-width: 768px) {
                 .footerlogo {
-                    height: 40px;
+                    height: 30px;
                 }
 
                 .footer-nav-link {
@@ -200,7 +200,7 @@ class Footer extends HTMLElement {
     //     align-self: stretch;
     //     width: 100%;
     //     flex: 0 0 auto;
-    //     background-color: #171617;
+    //     background-color: #000000;
     //     padding: 48px 0;
     //     }
 
