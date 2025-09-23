@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light only;
+}
+
 body {
   color: #f8f8f8;
   align-self: stretch;
