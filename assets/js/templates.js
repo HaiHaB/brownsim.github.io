@@ -547,20 +547,40 @@ class Header extends HTMLElement {
             <a href="procue_download" class="menu-link">Downloads</a>
         </div>
     </div>
-
-    <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("myMenu");
-        var items = header.getElementsByClassName("menu-item");
-        for (var i = 0; i < items.length; i++) {
-            items[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
     `;
+
+    // Add active class to the current button (highlight it)
+    const header = this.querySelector("#myMenu");
+    if (!header) return;
+    const items = header.getElementsByClassName("menu-item");
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", function() {
+        const current = header.getElementsByClassName("active");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+      });
+
+      const link = items[i].getElementsByClassName("menu-link")[0];
+      if (link) {
+        const href = link.getAttribute("href");
+        const page = window.location.pathname.split("/").pop().replace(".html", "");
+        let hrefPage;
+        if (href.startsWith("http")) {
+          hrefPage = new URL(href).pathname.split("/").pop().replace(".html", "");
+        } else {
+          hrefPage = href.split("/").pop().replace(".html", "");
+        }
+        if (hrefPage === page) {
+          const current = header.getElementsByClassName("active");
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+          }
+          items[i].className += " active";
+        }
+      }
+    }
   }
 }
 

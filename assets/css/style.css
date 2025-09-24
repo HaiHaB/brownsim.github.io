@@ -2849,6 +2849,7 @@ services .frame-4 {
 
   .menu-container {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .home .frame-25 {
