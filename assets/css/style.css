@@ -1028,6 +1028,18 @@ a {
   border-radius: 8px;
 }
 
+
+.image-shadow-consulting {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10%;
+}
+
 .image-shadow-logo {
   width: 80%;
   max-width: 100%;
@@ -2837,6 +2849,7 @@ services .frame-4 {
 
   .menu-container {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .home .frame-25 {
@@ -3056,6 +3069,18 @@ services .frame-4 {
       height: auto; /* Maintain aspect ratio */
     margin-bottom: 30px;
   }
+
+  .image-shadow-consulting {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top:0%;
+  }
+
   .home .text-wrapper-5 {
     position: relative;
     align-self: stretch;
@@ -3131,6 +3156,18 @@ services .frame-4 {
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
+
+  .image-shadow-consulting {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top:0%;
+  }
+
   .home .text-wrapper-5 {
     position: relative;
     align-self: stretch;
