@@ -3111,9 +3111,6 @@ services .frame-4 {
     font-style: var(--headline-h2-font-style);
   }
 
-  p {
-    text-align: justify
-  }
 }
 
 @media (max-width: 479px) {
@@ -3189,9 +3186,5 @@ services .frame-4 {
     letter-spacing: var(--headline-h2-letter-spacing);
     line-height: var(--headline-h2-line-height);
     font-style: var(--headline-h2-font-style);
-  }
-
-  p  {
-    text-align: justify
   }
 }
