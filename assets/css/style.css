@@ -2838,6 +2838,7 @@ services .frame-4 {
 
   .menu-container {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .home .frame-25 {
@@ -2915,7 +2916,6 @@ services .frame-4 {
     gap: 64px;
     flex-direction: row;
   }
-
 }
 
 @media (min-width: 1000px) {
