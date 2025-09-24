@@ -681,7 +681,6 @@ a {
   display: inline-flex;
   justify-content: flex-start;
   flex: 1;
-
 }
 
 .menu-item {
@@ -3057,6 +3056,61 @@ services .frame-4 {
       height: auto; /* Maintain aspect ratio */
     margin-bottom: 30px;
   }
+  .home .text-wrapper-5 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    text-align: center;
+  }
+
+  .home .text-wrapper-6 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    margin-bottom: 24px;
+  }
+  .procue .text-wrapper-10 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+  .procue .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+
 }
 
 @media (max-width: 479px) {
@@ -3076,5 +3130,61 @@ services .frame-4 {
       width: 40%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
+  }
+  .home .text-wrapper-5 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    text-align: center;
+  }
+
+  .home .text-wrapper-6 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    margin-bottom: 24px;
+  }
+
+  .procue .text-wrapper-10 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+
+  .procue .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
   }
 }

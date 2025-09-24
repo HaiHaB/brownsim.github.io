@@ -103,6 +103,10 @@ class Footer extends HTMLElement {
                     padding-top: 30px;
                 }
 
+                .footer .logogroup div:first-child {
+                    padding-top: 11px;
+                }
+
                 .footer .footer-nav, .footer-nav-link {
                     flex-direction: column;
                 }
@@ -113,13 +117,12 @@ class Footer extends HTMLElement {
             <div class="p-0 container-center">
                 <div class="footer">
                     <div class="row">
-
                         <div class="col-md-12 col-lg-3 order-lg-3">
                             <div class="row logogroup">
-                                <div class="col-md-6 col-lg-12">
-                                    <img class="footerlogo" style="margin-left: -10px" src="assets/img/logo.svg" alt="BrownSim logo" />
+                                <div class="col-6 col-lg-12">
+                                    <img class="footerlogo" style="margin-left: -10px; margin-top: 10px"" src="assets/img/logo.svg" alt="BrownSim logo" />
                                 </div>
-                                <div class="col-md-6 col-lg-12">
+                                <div class="col-6 col-lg-12">
                                     <img class="footerlogo" src="assets/img/procue-logo.svg" alt="ProCue logo" />
                                 </div>
                             </div>
