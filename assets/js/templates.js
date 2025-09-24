@@ -113,7 +113,6 @@ class Footer extends HTMLElement {
             <div class="p-0 container-center">
                 <div class="footer">
                     <div class="row">
-
                         <div class="col-md-12 col-lg-3 order-lg-3">
                             <div class="row logogroup">
                                 <div class="col-md-6 col-lg-12">
