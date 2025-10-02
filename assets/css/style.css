@@ -49,7 +49,7 @@ a {
   top: 0;
   z-index: 10000;
   padding: 7px 24px;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .sticky-menu {
@@ -604,7 +604,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .footer-space {
@@ -648,7 +648,7 @@ a {
 .menu-bar {
   display: flex;
   align-items: center;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .menu-container {
@@ -681,7 +681,6 @@ a {
   display: inline-flex;
   justify-content: flex-start;
   flex: 1;
-
 }
 
 .menu-item {
@@ -736,7 +735,7 @@ a {
 .home .overlap-wrapper {
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .home .overlap {
@@ -795,7 +794,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -854,7 +853,7 @@ a {
   gap: 10px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -886,7 +885,7 @@ a {
   position: relative;
   align-self: stretch;
   width: 100%;
-  background-color: #171617;
+  background-color: #000000;
   border-radius: 4px;
 }
 
@@ -1029,6 +1028,18 @@ a {
   border-radius: 8px;
 }
 
+
+.image-shadow-consulting {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10%;
+}
+
 .image-shadow-logo {
   width: 80%;
   max-width: 100%;
@@ -1045,7 +1056,7 @@ a {
   position: relative;
   /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
   object-fit: cover;
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .image-profile-pic {
@@ -1101,7 +1112,7 @@ a {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
   padding: 48px 0;
 }
 
@@ -1941,7 +1952,7 @@ a {
   position: absolute;
   top: 1228px;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .leadership .frame-10 {
@@ -2059,7 +2070,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .services .bw {
@@ -2388,7 +2399,7 @@ services .frame-4 {
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .services .frame-9 {
@@ -2541,7 +2552,7 @@ services .frame-4 {
 }
 
 .careers-list .item.active {
-  background-color: #171617;
+  background-color: #000000;
   color: #ffd053;
 }
 
@@ -2687,7 +2698,7 @@ services .frame-4 {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #171617;
+  background-color: #000000;
 }
 
 .resources .div {
@@ -2838,6 +2849,7 @@ services .frame-4 {
 
   .menu-container {
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .home .frame-25 {
@@ -3047,16 +3059,83 @@ services .frame-4 {
   }
   .image-shadow-logo{
       align-items: left;
-      width: 40%;
+      width: 65%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
   .image-shadow-procue-logo{
       align-items: left;
-      width: 20%;
+      width: 30%;
       height: auto; /* Maintain aspect ratio */
     margin-bottom: 30px;
   }
+
+  .image-shadow-consulting {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top:0%;
+  }
+
+  .home .text-wrapper-5 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    text-align: center;
+  }
+
+  .home .text-wrapper-6 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    margin-bottom: 24px;
+  }
+  .procue .text-wrapper-10 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+  .procue .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+
 }
 
 @media (max-width: 479px) {
@@ -3066,15 +3145,83 @@ services .frame-4 {
   }
   .image-shadow-logo{
       align-items: left;
-      width: 40%;
+      width: 65%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
   }
 
   .image-shadow-procue-logo{
       align-items: left;
-      width: 20%;
+      width: 40%;
       height: auto; /* Maintain aspect ratio */
       margin-bottom: 30px;
+  }
+
+  .image-shadow-consulting {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    /* box-shadow: 9px 24px 30px rgba(0, 0, 0, 0.5); */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top:0%;
+  }
+
+  .home .text-wrapper-5 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    text-align: center;
+  }
+
+  .home .text-wrapper-6 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+    margin-bottom: 24px;
+  }
+
+  .procue .text-wrapper-10 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
+  }
+
+  .procue .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--headline-h2-font-family), serif;
+    font-weight: var(--headline-h2-font-weight);
+    color: #ffffff;
+    font-size: var(--headline-h2-font-size);
+    text-align: center;
+    letter-spacing: var(--headline-h2-letter-spacing);
+    line-height: var(--headline-h2-line-height);
+    font-style: var(--headline-h2-font-style);
   }
 }

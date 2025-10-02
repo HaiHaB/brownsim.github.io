@@ -7,7 +7,7 @@ class Footer extends HTMLElement {
     this.innerHTML = `
         <style>
             .footerlogo {
-                height: 50px;
+                height: 30px;
             }
 
             .grap-vert {
@@ -74,7 +74,7 @@ class Footer extends HTMLElement {
 
             @media (min-width: 768px) {
                 .footerlogo {
-                    height: 60px;
+                    height: 30px;
                 }
 
                 .footer-nav-link {
@@ -103,6 +103,10 @@ class Footer extends HTMLElement {
                     padding-top: 30px;
                 }
 
+                .footer .logogroup div:first-child {
+                    padding-top: 11px;
+                }
+
                 .footer .footer-nav, .footer-nav-link {
                     flex-direction: column;
                 }
@@ -113,13 +117,12 @@ class Footer extends HTMLElement {
             <div class="p-0 container-center">
                 <div class="footer">
                     <div class="row">
-
                         <div class="col-md-12 col-lg-3 order-lg-3">
                             <div class="row logogroup">
-                                <div class="col-md-6 col-lg-12">
-                                    <img class="footerlogo" style="margin-left: -12px" src="assets/img/logo.svg" alt="BrownSim logo" />
+                                <div class="col-6 col-lg-12">
+                                    <img class="footerlogo" style="margin-left: -10px; margin-top: 10px" src="assets/img/logo.svg" alt="BrownSim logo" />
                                 </div>
-                                <div class="col-md-6 col-lg-12">
+                                <div class="col-6 col-lg-12">
                                     <img class="footerlogo" src="assets/img/procue-logo.svg" alt="ProCue logo" />
                                 </div>
                             </div>
@@ -200,7 +203,7 @@ class Footer extends HTMLElement {
     //     align-self: stretch;
     //     width: 100%;
     //     flex: 0 0 auto;
-    //     background-color: #171617;
+    //     background-color: #000000;
     //     padding: 48px 0;
     //     }
 
@@ -544,20 +547,40 @@ class Header extends HTMLElement {
             <a href="procue_download" class="menu-link">Downloads</a>
         </div>
     </div>
-
-    <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("myMenu");
-        var items = header.getElementsByClassName("menu-item");
-        for (var i = 0; i < items.length; i++) {
-            items[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
     `;
+
+    // Add active class to the current button (highlight it)
+    const header = this.querySelector("#myMenu");
+    if (!header) return;
+    const items = header.getElementsByClassName("menu-item");
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", function() {
+        const current = header.getElementsByClassName("active");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+      });
+
+      const link = items[i].getElementsByClassName("menu-link")[0];
+      if (link) {
+        const href = link.getAttribute("href");
+        const page = window.location.pathname.split("/").pop().replace(".html", "");
+        let hrefPage;
+        if (href.startsWith("http")) {
+          hrefPage = new URL(href).pathname.split("/").pop().replace(".html", "");
+        } else {
+          hrefPage = href.split("/").pop().replace(".html", "");
+        }
+        if (hrefPage === page) {
+          const current = header.getElementsByClassName("active");
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+          }
+          items[i].className += " active";
+        }
+      }
+    }
   }
 }
 
