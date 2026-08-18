@@ -1,1 +1,4 @@
-Sitemap: https://brownsim.io/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://procue.xyz/sitemap.xml
